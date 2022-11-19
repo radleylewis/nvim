@@ -45,11 +45,8 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'nvim-tree/nvim-web-devicons' 
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'romgrk/barbar.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
@@ -64,6 +61,7 @@ luafile ~/.config/nvim/plugins/gitsigns-config.lua
 luafile ~/.config/nvim/plugins/lualine-config.lua
 luafile ~/.config/nvim/plugins/autopairs-config.lua
 luafile ~/.config/nvim/plugins/terminal-config.lua
+luafile ~/.config/nvim/plugins/nvimtree-config.lua
 
 colorscheme onedark
 
@@ -79,10 +77,10 @@ vmap <C-_> gc
 nnoremap <Leader>i :lua vim.lsp.buf.format(nil, 10000)<CR>
 
 " Directory 
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-d> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>n :NvimTreeFocus<CR>
+nnoremap <C-n> :NvimTreeFocus<CR>
+nnoremap <C-d> :NvimTreeToggle<CR>
+nnoremap <C-f> :NvimTreeFindFile<CR>
 "
 " Terminal
 autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
