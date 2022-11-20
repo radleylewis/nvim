@@ -77,10 +77,9 @@ vmap <C-_> gc
 nnoremap <Leader>i :lua vim.lsp.buf.format(nil, 10000)<CR>
 
 " Directory 
-nnoremap <leader>n :NvimTreeFocus<CR>
-nnoremap <C-n> :NvimTreeFocus<CR>
-nnoremap <C-d> :NvimTreeToggle<CR>
-nnoremap <C-f> :NvimTreeFindFile<CR>
+nnoremap <Leader>n :NvimTreeFocus<CR>
+nnoremap <Leader>m :NvimTreeToggle<CR>
+nnoremap <Leader>c :NvimTreeFindFile<CR>
 "
 " Terminal
 autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
