@@ -1,4 +1,4 @@
 # TODO
 
-- [ ] split panes Vertically
-- [ ] navigate to/from terminal with keymapping
+- [x] split panes Vertically
+- [x] navigate to/from terminal with keymapping
