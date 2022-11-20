@@ -25,6 +25,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("t", "<C-k>", "<Cmd>wincmd k<CR>", opts)
+keymap("t", "<C-j>", "<Cmd>wincmd j<CR>", opts)
+keymap("t", "<C-h>", "<Cmd>wincmd h<CR>", opts)
+keymap("t", "<C-l>", "<Cmd>wincmd l<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
