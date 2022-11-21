@@ -1,5 +1,5 @@
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set exrc
@@ -67,7 +67,7 @@ colorscheme onedark
 
 highlight Normal guibg=none
 
-let mapleader = " "
+let mapleader = ' '
 
 " Line Commenting 
 nmap <C-_> gcc
@@ -80,7 +80,7 @@ nnoremap <Leader>i :lua vim.lsp.buf.format(nil, 10000)<CR>
 nnoremap <Leader>n :NvimTreeFocus<CR>
 nnoremap <Leader>m :NvimTreeToggle<CR>
 nnoremap <Leader>c :NvimTreeFindFile<CR>
-"
+
 " Terminal
 autocmd TermEnter term://*toggleterm#* tnoremap <silent><C-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
