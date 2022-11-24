@@ -49,7 +49,10 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'romgrk/barbar.nvim'
 Plug 'windwp/nvim-autopairs'
+Plug 'RRethy/vim-illuminate'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 call plug#end()
 
 luafile ~/.config/nvim/plugins/cmp-config.lua
@@ -62,6 +65,7 @@ luafile ~/.config/nvim/plugins/lualine-config.lua
 luafile ~/.config/nvim/plugins/autopairs-config.lua
 luafile ~/.config/nvim/plugins/terminal-config.lua
 luafile ~/.config/nvim/plugins/nvimtree-config.lua
+luafile ~/.config/nvim/plugins/lsp/init.lua
 
 colorscheme onedark
 
