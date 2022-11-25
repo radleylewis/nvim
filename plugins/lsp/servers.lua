@@ -57,7 +57,13 @@ for type, icon in pairs(signs) do
 end
 
 -- configure html server
-lspconfig["html"].setup({
+lspconfig.html.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure python server
+lspconfig.pyright.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })

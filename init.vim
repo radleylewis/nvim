@@ -31,10 +31,13 @@ set mouse+=a
 
 call plug#begin('~/.config/nvim/plugged')
 
+" General Dependency
 Plug 'nvim-lua/plenary.nvim'
 
+" Colorscheme
 Plug 'navarasu/onedark.nvim'
 
+" Language Support
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -45,6 +48,7 @@ Plug 'jose-elias-alvarez/typescript.nvim'
 Plug 'onsails/lspkind.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jayp0521/mason-null-ls.nvim'
+Plug 'L3MON4D3/LuaSnip'    
 
 call plug#end()
 
