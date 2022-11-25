@@ -50,6 +50,9 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jayp0521/mason-null-ls.nvim'
 Plug 'L3MON4D3/LuaSnip'    
 
+" Comments
+Plug 'numToStr/Comment.nvim'
+
 call plug#end()
 
 let mapleader = " "
