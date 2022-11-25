@@ -77,20 +77,39 @@ typescript.setup({
 })
 
 -- configure css server
-lspconfig["cssls"].setup({
+lspconfig.cssls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
 -- configure emmet language server
-lspconfig["emmet_ls"].setup({
+lspconfig.emmet_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
--- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
+-- configure vue server
+lspconfig.vuels.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "vue" },
+})
+
+-- configure docker server
+lspconfig.dockerls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure vim server
+lspconfig.vimls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure lua server
+lspconfig.sumneko_lua.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
