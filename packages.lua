@@ -30,6 +30,7 @@ Plug("jayp0521/mason-null-ls.nvim")
 Plug("L3MON4D3/LuaSnip")
 Plug("saadparwaiz1/cmp_luasnip")
 Plug("rafamadriz/friendly-snippets")
+Plug("windwp/nvim-autopairs")
 
 -- Comments
 Plug("numToStr/Comment.nvim")
