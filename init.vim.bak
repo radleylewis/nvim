@@ -1,4 +1,5 @@
-set tabstop=2 softtabstop=2
+set tabstop=2 
+set   softtabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
@@ -55,6 +56,8 @@ Plug 'numToStr/Comment.nvim'
 
 call plug#end()
 
+colorscheme onedark
+
 let mapleader = " "
 
 luafile ~/.config/nvim/plugins/lsp/mason.lua
@@ -63,4 +66,3 @@ luafile ~/.config/nvim/plugins/lsp/saga.lua
 luafile ~/.config/nvim/plugins/lsp/nullls.lua
 luafile ~/.config/nvim/plugins/nvim-cmp-config.lua
 
-colorscheme onedark

@@ -26,7 +26,7 @@ null_ls.setup({
 		diagnostics.shellcheck, -- linter
 
 		-- Lua
-		formatting.stylua, -- lua formatter
+		formatting.stylua, -- formatter
 
 		-- TypeScript/JavaScript etc
 		formatting.prettier, -- formatter
