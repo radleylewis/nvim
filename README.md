@@ -1,4 +1,5 @@
-# TODO
+# Neovim Config
 
-- [x] split panes Vertically
-- [x] navigate to/from terminal with keymapping
+## neovim version
+
+0.8.0
