@@ -38,6 +38,9 @@ Plug 'numToStr/Comment.nvim'
 " Window Management
 Plug 'szw/vim-maximizer' 
 
+" Git Integration
+Plug 'lewis6991/gitsigns.nvim'
+
 call plug#end()
 
 " Base Configuration Files
@@ -52,6 +55,7 @@ luafile ~/.config/nvim/plugins/lualine.lua
 luafile ~/.config/nvim/plugins/nvim-tree.lua
 luafile ~/.config/nvim/plugins/nvim-treesitter.lua
 luafile ~/.config/nvim/plugins/nvim-autopairs.lua
+luafile ~/.config/nvim/plugins/gitsigns.lua
 luafile ~/.config/nvim/plugins/lsp/nullls.lua
 luafile ~/.config/nvim/plugins/lsp/saga.lua
 luafile ~/.config/nvim/plugins/lsp/mason.lua
