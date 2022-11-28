@@ -15,12 +15,6 @@ keymap.set("n", "<leader>sh", "<C-w>h") -- split window horizontally
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximise
 
--- Pane Navigation
-keymap.set("n", "<C-h>", "<C-w>h", opts) -- Navigate left
-keymap.set("n", "<C-j>", "<C-w>j", opts) -- Navigate down
-keymap.set("n", "<C-k>", "<C-w>k", opts) -- Navigate up
-keymap.set("n", "<C-l>", "<C-w>l", opts) -- Navidate right
-
 -- Tab Management
 keymap.set("n", "<A-o>", ":tabnew<CR>") -- new tab
 keymap.set("n", "<A-x>", ":tabclose<CR>") -- close tab

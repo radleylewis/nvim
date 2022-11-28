@@ -37,6 +37,7 @@ Plug 'numToStr/Comment.nvim'
 
 " Window Management
 Plug 'szw/vim-maximizer' 
+Plug 'christoomey/vim-tmux-navigator'
 
 " Git Integration
 Plug 'lewis6991/gitsigns.nvim'
