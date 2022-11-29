@@ -32,8 +32,9 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'windwp/nvim-autopairs' 
 Plug 'windwp/nvim-ts-autotag' 
 
-" Comments
+" Comments & Highlighting
 Plug 'numToStr/Comment.nvim' 
+Plug 'RRethy/vim-illuminate'
 
 " Window Management
 Plug 'szw/vim-maximizer' 
@@ -57,8 +58,8 @@ luafile ~/.config/nvim/plugins/nvim-tree.lua
 luafile ~/.config/nvim/plugins/nvim-treesitter.lua
 luafile ~/.config/nvim/plugins/nvim-autopairs.lua
 luafile ~/.config/nvim/plugins/gitsigns.lua
+luafile ~/.config/nvim/plugins/vim-illuminate.lua
 luafile ~/.config/nvim/plugins/lsp/nullls.lua
 luafile ~/.config/nvim/plugins/lsp/saga.lua
 luafile ~/.config/nvim/plugins/lsp/mason.lua
 luafile ~/.config/nvim/plugins/lsp/servers.lua
-
