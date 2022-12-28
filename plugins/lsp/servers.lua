@@ -29,8 +29,8 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
 	keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
 	keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
-	keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
-	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
+	keymap.set("n", "pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
+	keymap.set("n", "nd", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 	keymap.set("n", "<leader>lo", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
 
@@ -39,6 +39,14 @@ local on_attach = function(client, bufnr)
 		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
 		keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+	end
+
+	if client.name == "pyright" then
+		keymap.set("n", "<Leader>oi", "<cmd>PyrightOrganizeImports<CR>", {
+			buffer = bufnr,
+			silent = true,
+			noremap = true,
+		})
 	end
 end
 
@@ -63,6 +71,17 @@ lspconfig.html.setup({
 lspconfig.pyright.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		pyright = {
+			disableOrganizeImports = false,
+			analysis = {
+				useLibraryCodeForTypes = true,
+				autoSearchPaths = true,
+				diagnosticMode = "workspace",
+				autoImportCompletions = true,
+			},
+		},
+	},
 })
 
 -- configure typescript server with plugin
