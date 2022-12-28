@@ -64,3 +64,7 @@
 ### Vim Notes
 
 `ctrl + o` => go back
+
+### Other
+
+`:Mason `
