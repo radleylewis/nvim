@@ -65,6 +65,20 @@
 
 `ctrl + o` => go back
 
+### tmux
+
+`ctrl + a + |` => split vertically
+`ctrl + a + -` => split horizontally
+`ctrl + a + j` => move split down
+`ctrl + a + k` => move split up
+`ctrl + a + h` => move split left
+`ctrl + a + l` => move split right
+`ctrl + a + m` => maximise
+`ctrl + a + c` => new session
+`ctrl + a + d` => close all
+`ctrl + a + ,` => rename session
+`ctrl + a + x` => kill pane
+
 ### Other
 
 `:Mason `
