@@ -29,6 +29,10 @@
 
 `leader + m` => focus directory explorer  
 `leader + f` => toggle directory explorer
+`H` => show hidden files in dir
+`I` => toggle show .gitignore files in dir
+`a` => add new file from directory view
+`r` => rename file from directory view
 
 ### Find Files
 
@@ -64,6 +68,8 @@
 ### Vim Notes
 
 `ctrl + o` => go back
+`ctrl + i` => go next
+`:reg` => yank register
 
 ### tmux
 
