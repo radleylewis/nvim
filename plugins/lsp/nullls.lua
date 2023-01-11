@@ -19,7 +19,11 @@ null_ls.setup({
 
 		-- Python
 		formatting.black, -- formatter
-		diagnostics.flake8, -- linter
+		diagnostics.flake8.with({
+			extra_args = {
+				"--max-line-length=88",
+			},
+		}), -- linter
 
 		-- Bash
 		formatting.shfmt, -- formatter
