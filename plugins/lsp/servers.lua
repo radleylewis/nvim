@@ -36,7 +36,7 @@ local on_attach = function(client, bufnr)
 
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
-		keymap.set("n", "<leader>gD", ":TypescriptGoToSourceDefinition<CR>")
+		keymap.set("n", "<leader>gD", ":TypescriptGoToSourceDefinition<CR>") -- go to definition
 		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
 		keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
@@ -97,12 +97,6 @@ typescript.setup({
 		on_attach = on_attach,
 	},
 })
-
--- configure ts server
--- lspconfig.tsserver.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
 
 -- configure css server
 lspconfig.cssls.setup({
