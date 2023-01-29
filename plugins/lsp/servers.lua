@@ -112,7 +112,7 @@ lspconfig.emmet_ls.setup({
 })
 
 -- configure vue server
-lspconfig.vuels.setup({
+lspconfig.volar.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "vue" },
