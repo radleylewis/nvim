@@ -29,6 +29,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip' 
 Plug 'rafamadriz/friendly-snippets' 
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'storyn26383/vim-vue'
 Plug 'windwp/nvim-autopairs' 
 Plug 'windwp/nvim-ts-autotag' 
 
