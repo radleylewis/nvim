@@ -42,6 +42,10 @@ local on_attach = function(client, bufnr)
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
 	end
 
+	if client.name == "volar" then
+		keymap.set("n", "<leader>gD", ":vim.lsp.buf.definition()<CR>") -- go to definition
+	end
+
 	if client.name == "pyright" then
 		keymap.set("n", "<Leader>oi", "<cmd>PyrightOrganizeImports<CR>", {
 			buffer = bufnr,

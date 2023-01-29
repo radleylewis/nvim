@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-lua/plenary.nvim' 
 
 " Colorscheme & Appearance
+Plug 'EdenEast/nightfox.nvim' 
 Plug 'navarasu/onedark.nvim' 
 Plug 'nvim-lualine/lualine.nvim' 
 Plug 'nvim-tree/nvim-web-devicons' 

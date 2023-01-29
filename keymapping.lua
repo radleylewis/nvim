@@ -3,9 +3,6 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Behaviour
-keymap.set("n", "x", '"_x"') -- prevent copy of x deletion to register
-
 -- Shortcuts
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear search
 
