@@ -3,23 +3,22 @@ if not status_ok then
 	return
 end
 
-telescope.setup()
-
-local nvim_tree_events = require("nvim-tree.events")
-local bufferline_api = require("bufferline.api")
-
-local function get_tree_size()
-	return require("nvim-tree.view").View.width
-end
-
-nvim_tree_events.subscribe("TreeOpen", function()
-	bufferline_api.set_offset(get_tree_size())
-end)
-
-nvim_tree_events.subscribe("Resize", function()
-	bufferline_api.set_offset(get_tree_size())
-end)
-
-nvim_tree_events.subscribe("TreeClose", function()
-	bufferline_api.set_offset(0)
-end)
+telescope.setup({
+	defaults = {
+		mappings = {
+			i = {
+				-- ["<C-k>"] = "<C-n>",
+			},
+		},
+	},
+	pickers = {
+		find_files = {
+			theme = "dropdown",
+			previewer = false,
+		},
+		live_grep = {
+			theme = "dropdown",
+			previewer = false,
+		},
+	},
+})

@@ -27,18 +27,8 @@ keymap.set("n", "<A-,>", ":tabp<CR>") -- previous tab
 -- Directory Navigation
 keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>") -- focus directory explorer
 keymap.set("n", "<leader>f", ":NvimTreeToggle<CR>") -- toggle directory explorer
-keymap.set( -- find files
-	"n",
-	"<leader>p",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
-keymap.set( -- live grep
-	"n",
-	"<leader>r",
-	"<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({ previewer = false }))<CR>",
-	opts
-)
+keymap.set("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts) -- find files
+keymap.set("n", "<leader>r", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts) -- live grep
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { noremap = false }) -- Ctrl + / for commenting
