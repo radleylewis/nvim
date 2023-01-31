@@ -1,5 +1,15 @@
 # Neovim Config
 
+This is a Neovim setup for development focused in:
+
+- Python  
+- TypeScript/JavaScript  
+- Vue.js/Nuxt.js  
+- Docker  
+- Lua  
+
+I integrates with Tmux, and includes a fairly standard set of Neovim plugins that will be maintained over time. 
+
 ## neovim version
 
 0.8.0
