@@ -37,7 +37,7 @@ options.updatetime = 50
 options.backspace = "indent,eol,start"
 options.splitright = true
 options.splitbelow = true
-options.autochdir = true
+options.autochdir = false
 options.iskeyword:append("-")
 options.mouse:append("a")
 options.clipboard:append("unnamedplus")
