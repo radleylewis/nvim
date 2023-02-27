@@ -52,6 +52,9 @@ call plug#end()
 luafile ~/.config/nvim/settings.lua
 luafile ~/.config/nvim/keymapping.lua
 
+" Custom lua functions
+luafile ~/.config/nvim/plugins/functions.lua
+
 " Import Plugins
 luafile ~/.config/nvim/plugins/colortheme.lua
 luafile ~/.config/nvim/plugins/comment.lua
