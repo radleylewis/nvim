@@ -1,4 +1,4 @@
-require("lspsaga").init_lsp_saga({
+require("lspsaga").setup({
 	-- keybinds for navigation in lspsaga window
 	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
 	-- use enter to open file with finder
