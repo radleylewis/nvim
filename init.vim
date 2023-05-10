@@ -33,7 +33,6 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'storyn26383/vim-vue'
 Plug 'windwp/nvim-autopairs' 
 Plug 'windwp/nvim-ts-autotag' 
-Plug 'github/copilot.vim'
 
 " Comments & Highlighting
 Plug 'numToStr/Comment.nvim' 
