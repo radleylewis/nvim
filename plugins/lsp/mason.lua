@@ -31,6 +31,7 @@ mason_lspconfig.setup({
 		"vuels",
 		"vimls",
 		"dockerls",
+		"solidity_ls_nomicfoundation",
 		"rust_analyzer",
 	},
 	-- auto-install configured servers (with lspconfig)
