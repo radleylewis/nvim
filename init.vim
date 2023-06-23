@@ -33,6 +33,10 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'storyn26383/vim-vue'
 Plug 'windwp/nvim-autopairs' 
 Plug 'windwp/nvim-ts-autotag' 
+Plug 'simrat39/rust-tools.nvim'
+Plug 'rust-lang/rust.vim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'saeki/crates.nvim'
 
 " Comments & Highlighting
 Plug 'numToStr/Comment.nvim' 
@@ -47,9 +51,11 @@ Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
 
+let g:rustfmt_autosave = 1
+
 " Base Configuration Files
 luafile ~/.config/nvim/settings.lua
-luafile ~/.config/nvim/keymapping.lua
+luafile ~/.config/nvim/keymappings.lua
 
 " Custom lua functions
 luafile ~/.config/nvim/plugins/functions.lua

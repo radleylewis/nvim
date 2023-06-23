@@ -3,6 +3,11 @@ if not lspconfig_status then
 	return
 end
 
+local rust_setup, rust = pcall(require, "rust-tools")
+if not rust_setup then
+	return
+end
+
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
 	return
@@ -99,6 +104,21 @@ typescript.setup({
 	server = {
 		capabilities = capabilities,
 		on_attach = on_attach,
+	},
+})
+
+-- configure rust server
+rust.setup({
+	server = {
+		on_attach = function(_, bufnr)
+			vim.keymap.set("n", "<Leader>k", rust.hover_actions.hover_actions, { buffer = bufnr })
+			vim.keymap.set("n", "<Leader>ca", rust.code_action_group.code_action_group, { buffer = bufnr })
+		end,
+	},
+	tools = {
+		hover_actions = {
+			auto_focus = true,
+		},
 	},
 })
 
