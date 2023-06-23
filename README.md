@@ -6,13 +6,15 @@ This is a Neovim setup using lspsaga for development focused in:
 - TypeScript/JavaScript  
 - Vue.js/Nuxt.js  
 - Docker  
-- Lua  
+- Lua
+- Rust
+- Solidity  
 
 I integrates with Tmux, and includes a fairly standard set of Neovim plugins that will be maintained over time. 
 
 ## Neovim version supported
 
-0.8.0
+0.9.0
 
 ## Shortcuts
 
