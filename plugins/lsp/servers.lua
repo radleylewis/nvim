@@ -3,8 +3,8 @@ if not lspconfig_status then
 	return
 end
 
-local rust_setup, rust = pcall(require, "rust-tools")
-if not rust_setup then
+local rust_tools_setup, rust_tools = pcall(require, "rust-tools")
+if not rust_tools_setup then
 	return
 end
 
@@ -58,6 +58,12 @@ local on_attach = function(client, bufnr)
 			noremap = true,
 		})
 	end
+
+	if client.name == "rust_analyzer" then
+		vim.keymap.set("n", "<Leader>k", rust_tools.hover_actions.hover_actions, opts)
+		vim.keymap.set("n", "<Leader>ca", rust_tools.code_action_group.code_action_group, opts)
+		vim.keymap.set("n", "K", rust_tools.hover_actions.hover_actions, opts)
+	end
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
@@ -70,6 +76,20 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+-- configure rust server
+rust_tools.setup({
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+	},
+	filetypes = { "rust" },
+	tools = {
+		hover_actions = {
+			auto_focus = true,
+		},
+	},
+})
 
 -- configure html server
 lspconfig.html.setup({
@@ -104,21 +124,6 @@ typescript.setup({
 	server = {
 		capabilities = capabilities,
 		on_attach = on_attach,
-	},
-})
-
--- configure rust server
-rust.setup({
-	server = {
-		on_attach = function(_, bufnr)
-			vim.keymap.set("n", "<Leader>k", rust.hover_actions.hover_actions, { buffer = bufnr })
-			vim.keymap.set("n", "<Leader>ca", rust.code_action_group.code_action_group, { buffer = bufnr })
-		end,
-	},
-	tools = {
-		hover_actions = {
-			auto_focus = true,
-		},
 	},
 })
 
