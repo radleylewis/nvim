@@ -126,6 +126,7 @@ rust.setup({
 lspconfig.solidity_ls_nomicfoundation.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	filetypes = { "solidity" },
 })
 
 -- configure css server
