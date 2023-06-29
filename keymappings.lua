@@ -30,6 +30,9 @@ keymap.set("n", "<leader>f", ":NvimTreeToggle<CR>") -- toggle directory explorer
 keymap.set("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts) -- find files
 keymap.set("n", "<leader>r", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts) -- live grep
 
+-- Terminal
+keymap.set("n", "<A-t>", ":ToggleTerm size=20 direction=horizontal<CR>")
+
 -- Comments
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { noremap = false }) -- Ctrl + / for commenting
 vim.api.nvim_set_keymap("v", "<C-_>", "gcc", { noremap = false }) -- Ctrl + / for commenting

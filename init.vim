@@ -76,3 +76,4 @@ luafile ~/.config/nvim/plugins/lsp/saga.lua
 luafile ~/.config/nvim/plugins/lsp/mason.lua
 luafile ~/.config/nvim/plugins/lsp/servers.lua
 luafile ~/.config/nvim/plugins/telescope.lua
+luafile ~/.config/nvim/plugins/toggleterm-nvim.lua
