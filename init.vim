@@ -36,7 +36,6 @@ Plug 'windwp/nvim-ts-autotag'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'mfussenegger/nvim-dap'
-Plug 'saeki/crates.nvim'
 
 " Comments & Highlighting
 Plug 'numToStr/Comment.nvim' 
@@ -45,6 +44,8 @@ Plug 'RRethy/vim-illuminate'
 " Window Management
 Plug 'szw/vim-maximizer' 
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
 
 " Git Integration
 Plug 'lewis6991/gitsigns.nvim'
