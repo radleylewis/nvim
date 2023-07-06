@@ -51,7 +51,6 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
-
 let g:rustfmt_autosave = 1
 
 " Base Configuration Files
@@ -77,3 +76,7 @@ luafile ~/.config/nvim/plugins/lsp/mason.lua
 luafile ~/.config/nvim/plugins/lsp/servers.lua
 luafile ~/.config/nvim/plugins/telescope.lua
 luafile ~/.config/nvim/plugins/toggleterm-nvim.lua
+
+" Neovim and NvimTree transparent background
+hi Normal guibg=NONE ctermbg=NONE
+hi NvimTreeNormal guibg=NONE
