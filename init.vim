@@ -36,6 +36,7 @@ Plug 'windwp/nvim-ts-autotag'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'mfussenegger/nvim-dap'
+Plug 'github/copilot.vim'
 
 " Comments & Highlighting
 Plug 'numToStr/Comment.nvim' 
