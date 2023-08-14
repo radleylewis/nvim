@@ -41,6 +41,7 @@ Plug 'github/copilot.vim'
 " Comments & Highlighting
 Plug 'numToStr/Comment.nvim' 
 Plug 'RRethy/vim-illuminate'
+Plug 'machakann/vim-highlightedyank'
 
 " Window Management
 Plug 'szw/vim-maximizer' 
@@ -77,6 +78,7 @@ luafile ~/.config/nvim/plugins/lsp/mason.lua
 luafile ~/.config/nvim/plugins/lsp/servers.lua
 luafile ~/.config/nvim/plugins/telescope.lua
 luafile ~/.config/nvim/plugins/toggleterm-nvim.lua
+
 
 " Neovim and NvimTree transparent background
 hi Normal guibg=NONE ctermbg=NONE

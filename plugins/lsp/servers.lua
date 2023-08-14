@@ -97,6 +97,13 @@ lspconfig.html.setup({
 	on_attach = on_attach,
 })
 
+-- config tailwindcss server
+lspconfig.tailwindcss.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "svelte" },
+})
+
 -- configure python server
 lspconfig.pyright.setup({
 	capabilities = capabilities,
