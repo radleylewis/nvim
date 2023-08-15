@@ -33,7 +33,7 @@ null_ls.setup({
 		formatting.stylua, -- formatter
 
 		-- TypeScript/JavaScript etc
-		formatting.prettier, -- formatter
+		formatting.prettierd, -- formatter
 		diagnostics.eslint_d.with({ -- linter
 			-- use eslint only if .eslintrc file exists
 			condition = function(utils)

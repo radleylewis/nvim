@@ -41,6 +41,7 @@ options.autochdir = false
 options.iskeyword:append("-")
 options.mouse:append("a")
 options.clipboard:append("unnamedplus")
+options.modifiable = true
 
 -- Other
 options.exrc = true
