@@ -12,23 +12,23 @@ This is a Neovim setup using lspsaga for development focused in:
 
 I integrates with Tmux, and includes a fairly standard set of Neovim plugins that will be maintained over time. 
 
-## Neovim version supported
+## Neovim version supported  
 
-0.9.0
+0.9.0  
 
-## Shortcuts
+## Shortcuts  
 
-### Window Management
+### Window Management  
 
-`leader + sv` => split pane vertically  
-`leader + sh` => split pane horizontally  
+`leader + sv` => split pane vertically    
+`leader + sh` => split pane horizontally    
 `leader + sx` => close current pane  
 `leader + sm` => toggle maximise current pane
 
 `alt + o` => open new tab  
 `alt + x` => close current tab  
 `alt + .` => go to next tab  
-`alt + ,` => go to prev tab
+`alt + ,` => go to prev tab  
 
 ### Window Navigation
 
@@ -61,27 +61,27 @@ I integrates with Tmux, and includes a fairly standard set of Neovim plugins tha
 `leader + ca` => see available code actions  
 `leader + rn` => rename  
 `leader + ca` => code actions  
-`leader + D` => show line diagnostics  
+`leader + D` => show line diagnostics   
 `pd` => jump to prev diagnostic in buffer  
-`nd` => jump to next diagnostic in buffer  
+`nd` => jump to next diagnostic in buffer    
 `K` => hover doc  
-`leader + lo` => see outline on RHS
+`leader + lo` => see outline on RHS  
 
-#### tsserver
+#### tsserver  
 
 `leader + rf` => rename file  
 `leader + oi` => organise imports  
-`leader + ru` => remove unused imports
+`leader + ru` => remove unused imports  
 
-#### pyright
+#### pyright  
 
-`leader + oi` => organise imports
+`leader + oi` => organise imports  
 
-### Vim Notes
+### Vim Notes  
 
-`ctrl + o` => go back
-`ctrl + i` => go next
-`:reg` => yank register
+`ctrl + o` => go back  
+`ctrl + i` => go next  
+`:reg` => yank register  
 
 ### tmux
 
@@ -95,8 +95,9 @@ I integrates with Tmux, and includes a fairly standard set of Neovim plugins tha
 `ctrl + a + c` => new session  
 `ctrl + a + d` => close all  
 `ctrl + a + ,` => rename session  
-`ctrl + a + x` => kill pane
+`ctrl + a + x` => kill pane  
+`ctrl + a + w` => navigate windows 
 
-### Other
+### Other  
 
-`:Mason` => Language Support Management
+`:Mason` => Language Support Management  
