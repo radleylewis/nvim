@@ -40,11 +40,11 @@ I integrates with Tmux, and includes a fairly standard set of Neovim plugins tha
 ### Directory
 
 `leader + m` => focus directory explorer  
-`leader + f` => toggle directory explorer
-`H` => show hidden files in dir
-`I` => toggle show .gitignore files in dir
-`a` => add new file from directory view
-`r` => rename file from directory view
+`leader + f` => toggle directory explorer  
+`H` => show hidden files in dir  
+`I` => toggle show .gitignore files in dir  
+`a` => add new file from directory view  
+`r` => rename file from directory view  
 
 ### Find Files
 
