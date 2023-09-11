@@ -47,6 +47,10 @@ local on_attach = function(client, bufnr)
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
 	end
 
+	if client.name == "solidity" then
+		keymap.set("n", "<leader>gD", ":Lspsaga goto_definition <CR>") -- go to definition
+	end
+
 	if client.name == "volar" then
 		keymap.set("n", "<leader>gD", ":lua vim.lsp.buf.definition()<CR>") -- go to definition
 	end
@@ -135,7 +139,8 @@ typescript.setup({
 })
 
 -- configure solidity server
-lspconfig.solidity_ls_nomicfoundation.setup({
+-- lspconfig.solidity_ls_nomicfoundation.setup({
+lspconfig.solidity.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "solidity" },

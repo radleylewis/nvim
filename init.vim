@@ -48,7 +48,6 @@ Plug 'szw/vim-maximizer'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
-
 " Git Integration
 Plug 'lewis6991/gitsigns.nvim'
 
@@ -82,4 +81,4 @@ luafile ~/.config/nvim/plugins/toggleterm-nvim.lua
 
 " Neovim and NvimTree transparent background
 hi Normal guibg=NONE ctermbg=NONE
-hi NvimTreeNormal guibg=NONE
+hi NvimTreeNormal guibg=NONE ctermbg=NONE

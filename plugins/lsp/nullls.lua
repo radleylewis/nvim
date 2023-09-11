@@ -29,6 +29,9 @@ null_ls.setup({
 		formatting.shfmt, -- formatter
 		diagnostics.shellcheck, -- linter
 
+		-- Solidity
+		formatting.solhint, -- formatter
+
 		-- Lua
 		formatting.stylua, -- formatter
 
