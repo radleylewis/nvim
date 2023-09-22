@@ -14,9 +14,6 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 	-- setup formatters & linters
 	sources = {
-		--  to disable file types use
-		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
-
 		-- Python
 		formatting.black, -- formatter
 		diagnostics.flake8.with({
@@ -29,14 +26,11 @@ null_ls.setup({
 		formatting.shfmt, -- formatter
 		diagnostics.shellcheck, -- linter
 
-		-- Solidity
-		formatting.solhint, -- formatter
-
 		-- Lua
 		formatting.stylua, -- formatter
 
 		-- TypeScript/JavaScript etc
-		formatting.prettierd, -- formatter
+		formatting.prettierd,
 		diagnostics.eslint_d.with({ -- linter
 			-- use eslint only if .eslintrc file exists
 			condition = function(utils)

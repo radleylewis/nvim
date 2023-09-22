@@ -28,12 +28,12 @@ mason_lspconfig.setup({
 		"lua_ls",
 		"emmet_ls",
 		"pyright",
-		"vuels",
 		"vimls",
+		"solidity",
 		"dockerls",
-		"solidity_ls_nomicfoundation",
 		"rust_analyzer",
 		"tailwindcss",
+		"efm",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -50,6 +50,7 @@ mason_null_ls.setup({
 		"flake8", -- python linter
 		"shellcheck", -- bash linter
 		"shfmt", -- bash formatter
+		"solhint", -- solidity linter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

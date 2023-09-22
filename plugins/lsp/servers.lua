@@ -51,10 +51,6 @@ local on_attach = function(client, bufnr)
 		keymap.set("n", "<leader>gD", ":Lspsaga goto_definition <CR>") -- go to definition
 	end
 
-	if client.name == "volar" then
-		keymap.set("n", "<leader>gD", ":lua vim.lsp.buf.definition()<CR>") -- go to definition
-	end
-
 	if client.name == "pyright" then
 		keymap.set("n", "<Leader>oi", "<cmd>PyrightOrganizeImports<CR>", {
 			buffer = bufnr,
@@ -95,10 +91,40 @@ rust_tools.setup({
 	},
 })
 
+-- configure efm server
+lspconfig.efm.setup({
+	filetypes = { "solidity" },
+	init_options = { documentFormatting = true },
+	settings = {
+		languages = {
+			solidity = {
+				{
+					lintStdin = true,
+					lintIgnoreExitCode = true,
+					lintCommand = "solhint -f stylish stdin",
+					lintFormats = {
+						-- " %#" is equivalent to regex "\s*"  i.e. any number of whitespace.
+						-- "%l" matches line number in the output of solhint (needed to align the error on the right line number, otherwise they bunch up at 0)
+						-- "%c" matches column number
+						-- "%t" matches [wWeEnN] for warning, error, and note.  (changes color of diagnostic)
+						-- "%m" catches everything else for the body of the error.
+						" %#%l:%c %#%tarning %#%m",
+						" %#%l:%c %#%trror %#%m",
+						" %#%l:%c %#%tote %#%m",
+						" %#%l:%c %m",
+					},
+					lintSource = "solhint",
+				},
+			},
+		},
+	},
+})
+
 -- configure html server
 lspconfig.html.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	filetypes = { "html" },
 })
 
 -- config tailwindcss server
@@ -139,7 +165,6 @@ typescript.setup({
 })
 
 -- configure solidity server
--- lspconfig.solidity_ls_nomicfoundation.setup({
 lspconfig.solidity.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -157,13 +182,6 @@ lspconfig.emmet_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-})
-
--- configure vue server
-lspconfig.volar.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "vue" },
 })
 
 -- configure docker server
