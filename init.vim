@@ -54,7 +54,7 @@ Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 let g:rustfmt_autosave = 1
 
-autocmd BufWritePre *.sol lua vim.lsp.buf.format({async = true})
+" autocmd BufWritePre *.sol lua vim.lsp.buf.format({async = true})
 
 " Base Configuration Files
 luafile ~/.config/nvim/settings.lua

@@ -1,5 +1,6 @@
 local setup, null_ls = pcall(require, "null-ls")
 if not setup then
+	print("[ERROR] failed to load null-ls")
 	return
 end
 
@@ -15,19 +16,19 @@ null_ls.setup({
 	-- setup formatters & linters
 	sources = {
 		-- Python
-		formatting.black, -- formatter
-		diagnostics.flake8.with({
-			extra_args = {
-				"--max-line-length=88",
-			},
-		}), -- linter
+		-- formatting.black, -- formatter
+		-- diagnostics.flake8.with({
+		-- 	extra_args = {
+		-- 		"--max-line-length=88",
+		-- 	},
+		-- }), -- linter
 
 		-- Bash
-		formatting.shfmt, -- formatter
-		diagnostics.shellcheck, -- linter
+		-- formatting.shfmt, -- formatter
+		-- diagnostics.shellcheck, -- linter
 
 		-- Lua
-		formatting.stylua, -- formatter
+		-- formatting.stylua, -- formatter
 
 		-- TypeScript/JavaScript etc
 		formatting.prettierd,
