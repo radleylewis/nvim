@@ -91,6 +91,67 @@ rust_tools.setup({
   },
 })
 
+local efm_languages = {
+  lua = {
+    {
+      -- luacheck (linting)
+      lintCommand = "luacheck --codes --no-color --quiet -",
+      lintSource = "luacheck",
+      lintIgnoreExitCode = true,
+      lintStdin = true,
+      lintFormats = { "%.%#:%l:%c: (%t%n) %m" },
+      -- stylua (formatting)
+      formatCanRange = true,
+      formatCommand = "stylua --color Never ${--range-start:charStart} ${--range-end:charEnd} -",
+      formatStdin = true,
+    },
+  },
+  sh = {
+    {
+      -- shellcheck (linting)
+      lintCommand = "shellcheck -f gcc -x",
+      lintSource = "shellcheck",
+      lintFormats = {
+        "%f:%l:%c: %trror: %m",
+        "%f:%l:%c: %tarning: %m",
+        "%f:%l:%c: %tote: %m",
+      },
+      lintIgnoreExitCode = true,
+      -- shfmt (formatting)
+      formatCommand = "shfmt -ci -s -bn",
+      formatStdin = true,
+    },
+  },
+  solidity = {
+    {
+      -- solhint (linting)
+      lintStdin = true,
+      lintIgnoreExitCode = true,
+      lintCommand = "solhint -f stylish stdin",
+      lintFormats = {
+        " %#%l:%c %#%tarning %#%m",
+        " %#%l:%c %#%trror %#%m",
+        " %#%l:%c %#%tote %#%m",
+        " %#%l:%c %m",
+      },
+      lintSource = "solhint",
+    },
+  },
+  python = {
+    -- flake8 (linting)
+    lintStdin = true,
+    lintCommand = "flake8 --stdin-display-name ${INPUT} -",
+    lintSource = "flake8",
+    lintFormats = {
+      "%f:%l:%c: %m",
+    },
+    lintIgnoreExitCode = true,
+    -- black (formatting)
+    formatStdin = true,
+    formatCommand = "black --quiet -",
+  },
+}
+
 -- configure efm server
 lspconfig.efm.setup({
   filetypes = {
@@ -108,68 +169,7 @@ lspconfig.efm.setup({
     completion = true,
   },
   settings = {
-    languages = {
-      lua = {
-        {
-          -- luacheck (linting)
-          lintCommand = "luacheck --codes --no-color --quiet -",
-          lintSource = "luacheck",
-          lintIgnoreExitCode = true,
-          lintStdin = true,
-          lintFormats = { "%.%#:%l:%c: (%t%n) %m" },
-          -- stylua (formatting)
-          formatCanRange = true,
-          formatCommand = "stylua --color Never ${--range-start:charStart} ${--range-end:charEnd} -",
-          formatStdin = true,
-        },
-      },
-      sh = {
-        {
-          -- shellcheck (linting)
-          lintCommand = "shellcheck -f gcc -x",
-          lintSource = "shellcheck",
-          lintFormats = {
-            "%f:%l:%c: %trror: %m",
-            "%f:%l:%c: %tarning: %m",
-            "%f:%l:%c: %tote: %m",
-          },
-          lintIgnoreExitCode = true,
-          -- shfmt (formatting)
-          formatCommand = "shfmt -ci -s -bn",
-          formatStdin = true,
-        },
-      },
-      python = {
-        {
-          -- flake8 (linting)
-          lintStdin = true,
-          lintCommand = "flake8 --stdin-display-name ${INPUT} -",
-          lintSource = "flake8",
-          lintFormats = {
-            "%f:%l:%c: %m",
-          },
-          lintIgnoreExitCode = true,
-          -- black (formatting)
-          formatStdin = true,
-          formatCommand = "black --quiet -",
-        },
-      },
-      solidity = {
-        {
-          -- solhint (linting)
-          lintStdin = true,
-          lintIgnoreExitCode = true,
-          lintCommand = "solhint -f stylish stdin",
-          lintFormats = {
-            " %#%l:%c %#%tarning %#%m",
-            " %#%l:%c %#%trror %#%m",
-            " %#%l:%c %#%tote %#%m",
-            " %#%l:%c %m",
-          },
-          lintSource = "solhint",
-        },
-      },
-    },
+    languages = efm_languages,
   },
 })
 
