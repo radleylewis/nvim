@@ -25,9 +25,11 @@ local autopairs = {
 }
 
 require("lazy").setup({ 
-  "christoomey/vim-tmux-navigator",                   -- TMUX Navigation
   telescope,                                          -- Fuzzy Finder
   autopairs,                                          -- Autopairs/Brackets
+  "nvim-treesitter/nvim-treesitter",                  -- Syntax Highlighting
+  "christoomey/vim-tmux-navigator",                   -- TMUX Navigation
+  "lukas-reineke/indent-blankline.nvim",              -- Visual Indentation Aid
   "EdenEast/nightfox.nvim",                           -- Colorscheme
   "xiyaowong/transparent.nvim",                       -- Background Transparency
   "nvim-tree/nvim-tree.lua",                          -- Filetree Navigation
@@ -35,6 +37,7 @@ require("lazy").setup({
   "nvim-lualine/lualine.nvim",                        -- Statusline
   "RRethy/vim-illuminate",                            -- Illuminate Instances of Word
   "lewis6991/gitsigns.nvim",                          -- Git Status Icons 
+  { "ggandor/leap.nvim", lazy = false },              -- Navigate Visible Text Area
   { "machakann/vim-highlightedyank", lazy = false },  -- Highlight Yank
   { 'numToStr/Comment.nvim', lazy = false },          -- Commenting
 }, opts)
@@ -47,5 +50,8 @@ require('plugins.comment')
 require('plugins.vim-illuminate')
 require('plugins.telescope')
 require('plugins.gitsigns')
+require('plugins.indent-blankline')
+require('plugins.leap')
+
 require('settings')
 require('keymappings')

@@ -16,6 +16,7 @@ require("nvim-treesitter.configs").setup({
 		"bash",
 		"lua",
 		"dockerfile",
+    "solidity",
 		"gitignore",
 		"python",
 		"vue",
