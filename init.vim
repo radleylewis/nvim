@@ -56,6 +56,9 @@ let g:rustfmt_autosave = 1
 luafile ~/.config/nvim/settings.lua
 luafile ~/.config/nvim/keymappings.lua
 
+" Import Linters
+luafile ~/.config/nvim/plugins/lsp/linters.lua
+
 " Import Plugins
 luafile ~/.config/nvim/plugins/colortheme.lua
 luafile ~/.config/nvim/plugins/comment.lua
@@ -71,7 +74,6 @@ luafile ~/.config/nvim/plugins/lsp/mason.lua
 luafile ~/.config/nvim/plugins/lsp/servers.lua
 luafile ~/.config/nvim/plugins/telescope.lua
 luafile ~/.config/nvim/plugins/toggleterm-nvim.lua
-
 
 " Neovim and NvimTree transparent background
 hi Normal guibg=NONE ctermbg=NONE
