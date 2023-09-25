@@ -5,7 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable", 
     lazypath,
   })
 end
@@ -18,17 +18,18 @@ local telescope = {
     dependencies = { 'nvim-lua/plenary.nvim' },
 }
 
+
 require("lazy").setup({ 
+  telescope,                                          -- Fuzzy Finder
   "EdenEast/nightfox.nvim",                           -- Colorscheme
   "xiyaowong/transparent.nvim",                       -- Background Transparency
-  "christoomey/vim-tmux-navigator",                   -- TMUX Navigation
   "nvim-tree/nvim-tree.lua",                          -- Filetree Navigation
   "nvim-tree/nvim-web-devicons",                      -- File Icons
   "nvim-lualine/lualine.nvim",                        -- Statusline
   "RRethy/vim-illuminate",                            -- Illuminate Instances of Word
+  "christoomey/vim-tmux-navigator",                   -- TMUX Navigation
   { "machakann/vim-highlightedyank", lazy = false },  -- Highlight Yank
   { 'numToStr/Comment.nvim', lazy = false },          -- Commenting
-  telescope,                                          -- Fuzzy Finder
 }, opts)
 
 require('plugins.colorscheme')
@@ -38,5 +39,6 @@ require('plugins.lualine')
 require('plugins.comment')
 require('plugins.vim-illuminate')
 require('plugins.telescope')
+require('plugins.nvim-tmux-navigator')
 require('settings')
 require('keymappings')

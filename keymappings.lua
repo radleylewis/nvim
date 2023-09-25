@@ -4,11 +4,11 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Shortcuts
-keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear search
+keymap.set("n", "<leader>nh", ":nohl<CR>")            -- clear search
 
 -- Window Management
 keymap.set("n", "<leader>sv", "<C-w>v")               -- split window vertically
-keymap.set("n", "<leader>sh", ":split<CR>")               -- split window horizontally
+keymap.set("n", "<leader>sh", ":split<CR>")           -- split window horizontally
 keymap.set("n", "<leader>sx", ":close<CR>")           -- close current split window
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximise
 
@@ -29,7 +29,7 @@ keymap.set("n", "<leader>f", ":NvimTreeToggle<CR>")   -- toggle directory explor
 -- Telescope
 local builtin = require('telescope.builtin')
 keymap.set('n', '<leader>ff', builtin.find_files, {})
-keymap.set("n", "<leader>m", ":Telescope find_files follow=true no_ignore=true hidden=true <CR>")
+keymap.set("n", "<leader>fa", ":Telescope find_files follow=true no_ignore=true hidden=true <CR>")
 keymap.set('n', '<leader>fg', builtin.live_grep, {})
 keymap.set('n', '<leader>fb', builtin.buffers, {})
 keymap.set('n', '<leader>fh', builtin.help_tags, {})
