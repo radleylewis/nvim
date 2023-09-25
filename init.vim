@@ -24,8 +24,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'glepnir/lspsaga.nvim' 
 Plug 'jose-elias-alvarez/typescript.nvim' 
 Plug 'onsails/lspkind.nvim' 
-Plug 'jose-elias-alvarez/null-ls.nvim' 
-Plug 'jayp0521/mason-null-ls.nvim' 
 Plug 'L3MON4D3/LuaSnip' 
 Plug 'saadparwaiz1/cmp_luasnip' 
 Plug 'rafamadriz/friendly-snippets' 
@@ -54,14 +52,9 @@ Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 let g:rustfmt_autosave = 1
 
-" autocmd BufWritePre *.sol lua vim.lsp.buf.format({async = true})
-
 " Base Configuration Files
 luafile ~/.config/nvim/settings.lua
 luafile ~/.config/nvim/keymappings.lua
-
-" Custom lua functions
-luafile ~/.config/nvim/plugins/functions.lua
 
 " Import Plugins
 luafile ~/.config/nvim/plugins/colortheme.lua
@@ -73,7 +66,6 @@ luafile ~/.config/nvim/plugins/nvim-treesitter.lua
 luafile ~/.config/nvim/plugins/nvim-autopairs.lua
 luafile ~/.config/nvim/plugins/gitsigns.lua
 luafile ~/.config/nvim/plugins/vim-illuminate.lua
-luafile ~/.config/nvim/plugins/lsp/nullls.lua
 luafile ~/.config/nvim/plugins/lsp/saga.lua
 luafile ~/.config/nvim/plugins/lsp/mason.lua
 luafile ~/.config/nvim/plugins/lsp/servers.lua

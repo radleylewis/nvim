@@ -18,6 +18,12 @@ if not typescript_setup then
   return
 end
 
+local linters_setup, linters = pcall(require, "./linters")
+if not linters_setup then
+  print("linters not setup")
+  return
+end
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -91,15 +97,12 @@ rust_tools.setup({
   },
 })
 
+print('hello')
+print(linters.luacheck)
 local efm_languages = {
   lua = {
+    linters.luacheck,
     {
-      -- luacheck (linting)
-      lintCommand = "luacheck --codes --no-color --quiet -",
-      lintSource = "luacheck",
-      lintIgnoreExitCode = true,
-      lintStdin = true,
-      lintFormats = { "%.%#:%l:%c: (%t%n) %m" },
       -- stylua (formatting)
       formatCanRange = true,
       formatCommand = "stylua --color Never ${--range-start:charStart} ${--range-end:charEnd} -",
@@ -107,49 +110,27 @@ local efm_languages = {
     },
   },
   sh = {
+    linters.shellcheck,
     {
-      -- shellcheck (linting)
-      lintCommand = "shellcheck -f gcc -x",
-      lintSource = "shellcheck",
-      lintFormats = {
-        "%f:%l:%c: %trror: %m",
-        "%f:%l:%c: %tarning: %m",
-        "%f:%l:%c: %tote: %m",
-      },
-      lintIgnoreExitCode = true,
+
       -- shfmt (formatting)
       formatCommand = "shfmt -ci -s -bn",
       formatStdin = true,
     },
   },
-  solidity = {
-    {
-      -- solhint (linting)
-      lintStdin = true,
-      lintIgnoreExitCode = true,
-      lintCommand = "solhint -f stylish stdin",
-      lintFormats = {
-        " %#%l:%c %#%tarning %#%m",
-        " %#%l:%c %#%trror %#%m",
-        " %#%l:%c %#%tote %#%m",
-        " %#%l:%c %m",
-      },
-      lintSource = "solhint",
-    },
-  },
+  solidity = { linters.solhint },
   python = {
-    -- flake8 (linting)
-    lintStdin = true,
-    lintCommand = "flake8 --stdin-display-name ${INPUT} -",
-    lintSource = "flake8",
-    lintFormats = {
-      "%f:%l:%c: %m",
-    },
-    lintIgnoreExitCode = true,
+    linters.flake8,
     -- black (formatting)
     formatStdin = true,
     formatCommand = "black --quiet -",
   },
+  javascript = { linters.eslint_d },
+  javascriptreact = { linters.eslint_d },
+  typescript = { linters.eslint_d },
+  typescriptreact = { linters.eslint_d },
+  svelte = { linters.eslint_d },
+  vue = { linters.eslint_d },
 }
 
 -- configure efm server
@@ -159,6 +140,12 @@ lspconfig.efm.setup({
     "python",
     "sh",
     "lua",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "svelte",
+    "vue",
   },
   init_options = {
     documentFormatting = true,
