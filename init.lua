@@ -18,16 +18,23 @@ local telescope = {
     dependencies = { 'nvim-lua/plenary.nvim' },
 }
 
+local autopairs = {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+}
 
 require("lazy").setup({ 
+  "christoomey/vim-tmux-navigator",                   -- TMUX Navigation
   telescope,                                          -- Fuzzy Finder
+  autopairs,                                          -- Autopairs/Brackets
   "EdenEast/nightfox.nvim",                           -- Colorscheme
   "xiyaowong/transparent.nvim",                       -- Background Transparency
   "nvim-tree/nvim-tree.lua",                          -- Filetree Navigation
   "nvim-tree/nvim-web-devicons",                      -- File Icons
   "nvim-lualine/lualine.nvim",                        -- Statusline
   "RRethy/vim-illuminate",                            -- Illuminate Instances of Word
-  "christoomey/vim-tmux-navigator",                   -- TMUX Navigation
+  "lewis6991/gitsigns.nvim",                          -- Git Status Icons 
   { "machakann/vim-highlightedyank", lazy = false },  -- Highlight Yank
   { 'numToStr/Comment.nvim', lazy = false },          -- Commenting
 }, opts)
@@ -39,6 +46,6 @@ require('plugins.lualine')
 require('plugins.comment')
 require('plugins.vim-illuminate')
 require('plugins.telescope')
-require('plugins.nvim-tmux-navigator')
+require('plugins.gitsigns')
 require('settings')
 require('keymappings')

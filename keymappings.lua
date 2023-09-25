@@ -21,6 +21,10 @@ keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts) -- Navigate left
 keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts) -- Navigate down
 keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts) -- Navigate up
 keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts) -- Navigate right
+keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>", opts)              -- Navigate left
+keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>", opts)              -- Navigate down
+keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>", opts)              -- Navigate up
+keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>", opts)              -- Navidate right
 
 -- Directory Navigation
 keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>")    -- focus directory explorer
@@ -37,9 +41,6 @@ keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- line numbers
 keymap.set("n", "<leader>n", ":set nu! <CR>")         -- set line number
 keymap.set("n", "<leader>rn", ":set rnu! <CR>")       -- set relative line numbers
-
--- Terminal
-keymap.set("n", "<A-t>", ":ToggleTerm size=20 direction=horizontal<CR>")
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { noremap = false }) -- Ctrl + / for commenting
