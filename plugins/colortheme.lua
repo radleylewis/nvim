@@ -1,1 +1,3 @@
-pcall(vim.cmd, "colorscheme nightfox")
+vim.cmd[[colorscheme nightfox]]
+
+-- pcall(vim.cmd, "colorscheme nightfox")

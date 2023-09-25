@@ -8,6 +8,8 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'navarasu/onedark.nvim' 
 Plug 'nvim-lualine/lualine.nvim' 
 Plug 'nvim-tree/nvim-web-devicons' 
+Plug 'xiyaowong/transparent.nvim'
+Plug 'folke/tokyonight.nvim'
 
 " File Explorer
 Plug 'nvim-tree/nvim-tree.lua' 
@@ -55,6 +57,7 @@ let g:rustfmt_autosave = 1
 " Base Configuration Files
 luafile ~/.config/nvim/settings.lua
 luafile ~/.config/nvim/keymappings.lua
+luafile ~/.config/nvim/plugins/tokyonight.lua
 
 " Import Linters
 luafile ~/.config/nvim/plugins/lsp/linters.lua
@@ -76,5 +79,5 @@ luafile ~/.config/nvim/plugins/telescope.lua
 luafile ~/.config/nvim/plugins/toggleterm-nvim.lua
 
 " Neovim and NvimTree transparent background
-hi Normal guibg=NONE ctermbg=NONE
-hi NvimTreeNormal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
+" hi NvimTreeNormal guibg=NONE ctermbg=NONE
