@@ -18,7 +18,7 @@ require("lazy").setup("plugins", {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "nightfox" },
+		colorscheme = { "nord" },
 	},
 	rtp = {
 		disabled_plugins = {

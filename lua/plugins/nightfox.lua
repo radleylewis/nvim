@@ -1,8 +1,8 @@
 return {
-    "EdenEast/nightfox.nvim",
-  	config = function()
-      vim.cmd("colorscheme nordfox")
-    end,
-	  lazy = false,
-	  priority = 1000,
+	"shaunsingh/nord.nvim",
+	config = function()
+		vim.cmd("colorscheme nord")
+	end,
+	lazy = false,
+	priority = 1000,
 }

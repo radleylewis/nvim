@@ -4,7 +4,6 @@ local config = function()
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 	-- used to enable autocompletion (assign to every lsp server config)
-
 	local capabilities = cmp_nvim_lsp.default_capabilities()
 
 	-- enable keybinds only for when lsp server available
@@ -21,7 +20,7 @@ local config = function()
 		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
 		vim.keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
 		vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
-		vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
+		vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to prev diagnostic in buffer
 		vim.keymap.set("n", "<leader>nd", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 		vim.keymap.set("n", "<leader>lo", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
@@ -115,6 +114,7 @@ local config = function()
 		},
 	})
 
+
 	-- tailwindcss
 	lspconfig.tailwindcss.setup({
 		capabilities = capabilities,
@@ -150,17 +150,14 @@ local config = function()
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
-
 	local shellcheck = require("efmls-configs.linters.shellcheck")
 	local shfmt = require("efmls-configs.formatters.shfmt")
-
 	local solhint = require("efmls-configs.linters.solhint")
-
 	local flake8 = require("efmls-configs.linters.flake8")
 	local black = require("efmls-configs.formatters.black")
-
 	local eslint_d = require("efmls-configs.linters.eslint_d")
 	local prettier_d = require("efmls-configs.formatters.prettier_d")
+	local markdownlint = require("efmls-configs.linters.markdownlint")
 
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -176,6 +173,7 @@ local config = function()
 			"svelte",
 			"vue",
 			"json",
+			"markdown",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -198,10 +196,12 @@ local config = function()
 				svelte = { eslint_d, prettier_d },
 				vue = { eslint_d, prettier_d },
 				json = { eslint_d, prettier_d },
+				markdown = { markdownlint, prettier_d },
 			},
 		},
 	})
 
+	-- Format on Save
 	local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
 	vim.api.nvim_create_autocmd("BufWritePost", {
 		group = lsp_fmt_group,
