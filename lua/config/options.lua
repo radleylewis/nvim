@@ -41,10 +41,22 @@ options.autochdir = false
 options.iskeyword:append("-")
 options.mouse:append("a")
 options.clipboard:append("unnamedplus")
+options.modifiable = true
 
 -- Other
 options.exrc = true
 options.guicursor =
-	"n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+"n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 options.backspace = "indent,eol,start"
 options.encoding = "UTF-8"
+
+options.listchars.eol = "↵"
+options.listchars:append({ tab = "➤ " })
+options.listchars:append({ nbsp = "␣" })
+options.listchars:append({ trail = "»" })
+options.listchars:append({ extends = "▶" })
+options.listchars:append({ precedes = "◀" })
+
+options.showbreak = "↪ "
+
+options.list = true
