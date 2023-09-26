@@ -1,2 +1,0 @@
-require("tokyonight").setup({
-})

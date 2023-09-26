@@ -1,2 +1,0 @@
-vim.cmd[[colorscheme nightfox]]
-
