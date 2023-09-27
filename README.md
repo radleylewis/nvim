@@ -1,6 +1,6 @@
 # Neovim Config
 
-This is a Neovim setup using lspsaga for development focused in:
+Welcome to my NeoVim config. This config is written entirely in lua and includes the following plugins:
 
 - Python  
 - TypeScript/JavaScript  
