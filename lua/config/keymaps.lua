@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -32,10 +30,6 @@ keymap.set("n", "<leader>f", ":NvimTreeToggle<CR>") -- toggle directory explorer
 
 -- Show full file path
 keymap.set("n", "<leader>pa", "[[Cmd]]echo expand('%:p')<CR>", opts)
-
--- line numbers
-keymap.set("n", "<leader>n", ":set nu! <CR>") -- set line number
-keymap.set("n", "<leader>rn", ":set rnu! <CR>") -- set relative line numbers
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { noremap = false }) -- Ctrl + / for commenting
