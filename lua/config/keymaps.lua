@@ -31,7 +31,7 @@ keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>") -- focus directory explorer
 keymap.set("n", "<leader>f", ":NvimTreeToggle<CR>") -- toggle directory explorer
 
 -- Show full file path
-keymap.set("n", "<leader>pa", ":echo expand('%:p')<CR>", opts)
+keymap.set("n", "<leader>pa", "[[Cmd]]echo expand('%:p')<CR>", opts)
 
 -- line numbers
 keymap.set("n", "<leader>n", ":set nu! <CR>") -- set line number
