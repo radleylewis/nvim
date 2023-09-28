@@ -16,7 +16,7 @@ return {
 					open = "<leader>co",
 				},
 				layout = {
-					position = "right", -- | top | left | right
+					position = "right", -- bottom | top | left | right
 					ratio = 0.4,
 				},
 			},
