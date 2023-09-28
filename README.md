@@ -28,16 +28,16 @@ Welcome to my NeoVim config. This config is written entirely in lua and includes
 [vim-illuminate](https://github.com/RRethy/vim-illuminate) - illuminates instances of word under cursor
 [whichkey](https://github.com/folke/which-key.nvim) - shortcut hints
 
-## Neovim version supported
+## Neovim version supported  
 
 ^0.9.0
 
 ## Some Common Shortcuts
 
-### Window Management
+### Window Management  
 
-`leader + sv` => split pane vertically  
-`leader + sh` => split pane horizontally  
+`leader + sv` => split pane vertically    
+`leader + sh` => split pane horizontally    
 `leader + sx` => close current pane  
 `leader + sm` => toggle maximise current pane
 
@@ -51,11 +51,11 @@ Welcome to my NeoVim config. This config is written entirely in lua and includes
 ### Directory
 
 `leader + m` => focus directory explorer  
-`leader + f` => toggle directory explorer
-`H` => show hidden files in dir
-`I` => toggle show .gitignore files in dir
-`a` => add new file from directory view
-`r` => rename file from directory view
+`leader + f` => toggle directory explorer  
+`H` => show hidden files in dir  
+`I` => toggle show .gitignore files in dir  
+`a` => add new file from directory view  
+`r` => rename file from directory view  
 
 ### Find Files
 
@@ -72,26 +72,28 @@ Welcome to my NeoVim config. This config is written entirely in lua and includes
 `leader + ca` => see available code actions  
 `leader + rn` => rename  
 `leader + ca` => code actions  
-`leader + D` => show line diagnostics  
+`leader + D` => show line diagnostics   
 `pd` => jump to prev diagnostic in buffer  
-`nd` => jump to next diagnostic in buffer  
-`K` => hover doc
 
-#### tsserver
+`nd` => jump to next diagnostic in buffer  
+`nd` => jump to next diagnostic in buffer    
+`K` => hover doc  
+
+#### tsserver  
 
 `leader + rf` => rename file  
 `leader + oi` => organise imports  
-`leader + ru` => remove unused imports
+`leader + ru` => remove unused imports  
 
-#### pyright
+#### pyright  
 
-`leader + oi` => organise imports
+`leader + oi` => organise imports  
 
-### Vim Notes
+### Vim Notes  
 
-`ctrl + o` => go back
-`ctrl + i` => go next
-`:reg` => yank register
+`ctrl + o` => go back  
+`ctrl + i` => go next  
+`:reg` => yank register  
 
 ### tmux
 
@@ -106,7 +108,10 @@ Welcome to my NeoVim config. This config is written entirely in lua and includes
 `ctrl + a + d` => close all  
 `ctrl + a + $` => rename session  
 `ctrl + a + x` => kill pane
+`ctrl + a + ,` => rename session  
+`ctrl + a + x` => kill pane  
+`ctrl + a + w` => navigate windows 
 
-### Other
+### Other  
 
-`:Mason` => Language Support Management
+`:Mason` => Language Support Management  
