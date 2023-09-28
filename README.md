@@ -2,19 +2,12 @@
 
 Welcome to my NeoVim config. This config is written entirely in lua and includes the following plugins:
 
-- Python  
-- TypeScript/JavaScript  
-- Vue.js/Nuxt.js  
-- Docker  
-- Lua
-- Rust
-- Solidity  
-
-I integrates with Tmux, and includes a fairly standard set of Neovim plugins that will be maintained over time. 
+[Comment.nvim](https://github.com/numToStr/Comment.nvim) - Commenting  
+[Copilot](https://github.com/zbirenbaum/copilot.lua) - Github copilot integration
 
 ## Neovim version supported
 
-0.9.0
+^0.9.0
 
 ## Shortcuts
 

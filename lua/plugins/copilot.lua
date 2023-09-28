@@ -13,10 +13,10 @@ return {
 					jump_next = "]]",
 					accept = "<CR>",
 					refresh = "gr",
-					open = "<leader>co",
+					open = "<M-CR>",
 				},
 				layout = {
-					position = "right", -- bottom | top | left | right
+					position = "bottom", -- | top | left | right
 					ratio = 0.4,
 				},
 			},
@@ -25,12 +25,12 @@ return {
 				auto_trigger = false,
 				debounce = 75,
 				keymap = {
-					accept = "<leader>ca",
+					accept = "<M-l>",
 					accept_word = false,
 					accept_line = false,
-					next = "<leader>cn",
-					prev = "<leader>cp",
-					dismiss = "<leader>cx",
+					next = "<M-]>",
+					prev = "<M-[>",
+					dismiss = "<C-]>",
 				},
 			},
 			filetypes = {
