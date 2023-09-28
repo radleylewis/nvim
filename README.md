@@ -1,5 +1,7 @@
 # Neovim Config
 
+![preview](https://github.com/radleylewis/nvim/assets/40852773/a30d5bff-ffd1-43a8-96f7-94a2ec5362dd)
+
 Welcome to my NeoVim config. This config is written entirely in lua and includes the following plugins:  
 
 [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager  
