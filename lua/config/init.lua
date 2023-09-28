@@ -17,7 +17,7 @@ require("config.globals")
 require("config.keymaps")
 require("config.options")
 
-require("lazy").setup("plugins", {
+local opts = {
 	defaults = {
 		lazy = true,
 	},
@@ -35,5 +35,6 @@ require("lazy").setup("plugins", {
 	change_detection = {
 		notify = false,
 	},
-})
+}
 
+require("lazy").setup({ import = "plugins" }, opts)
