@@ -1,7 +1,8 @@
 # Neovim Config
 
-Welcome to my NeoVim config. This config is written entirely in lua and includes the following plugins:
+Welcome to my NeoVim config. This config is written entirely in lua and includes the following plugins:  
 
+[lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager  
 [comment.nvim](https://github.com/numToStr/Comment.nvim) - Commenting  
 [copilot](https://github.com/zbirenbaum/copilot.lua) - Github copilot integration  
 [gitsigns](https://github.com/lewis6991/gitsigns.nvim) - Git status signs  
