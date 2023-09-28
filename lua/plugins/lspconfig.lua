@@ -230,7 +230,5 @@ return {
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-nvim-lsp",
-		-- set keybinds
-		vim.keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>"), -- show definition, references
 	},
 }

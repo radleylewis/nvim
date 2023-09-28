@@ -1,1 +1,1 @@
-require('config')
+require("config")
