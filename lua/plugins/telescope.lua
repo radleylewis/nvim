@@ -1,7 +1,7 @@
-local m = require("util").lazy_map
+local mapkeys = require("util").mapkeys
 
 local config = function()
-	local telescope = require('telescope')
+	local telescope = require("telescope")
 	telescope.setup({
 		defaults = {
 			mappings = {
@@ -15,27 +15,29 @@ local config = function()
 			find_files = {
 				theme = "dropdown",
 				previewer = false,
+				hidden = true,
 			},
 			live_grep = {
 				theme = "dropdown",
 				previewer = false,
 			},
+			buffers = {
+				theme = "dropdown",
+			},
 		},
 	})
-	end
-
+end
 
 return {
-  'nvim-telescope/telescope.nvim',
-  tag = '0.1.3',
-	dependencies = { 'nvim-lua/plenary.nvim' },
+	"nvim-telescope/telescope.nvim",
+	tag = "0.1.3",
+	dependencies = { "nvim-lua/plenary.nvim" },
 	config = config,
-		keys = {
-		m("<leader>fk", [[Telescope keymaps]]),
-		m("<leader>fh", [[Telescope help_tags]]),
-		m("<leader>ff", [[Telescope find_files]]),
-		m("<leader>fa", [[TelescopeFindFilesNoIgnore]]),
-		m("<leader>fg", [[Telescope live_grep]]),
-		m("<leader>fb", [[Telescope buffers]]),
+	keys = {
+		mapkeys([[<leader>fk]], [[Telescope keymaps]]),
+		mapkeys([[<leader>fh]], [[Telescope help_tags]]),
+		mapkeys([[<leader>ff]], [[Telescope find_files]]),
+		mapkeys([[<leader>fg]], [[Telescope live_grep]]),
+		mapkeys([[<leader>fb]], [[Telescope buffers]]),
 	},
 }
