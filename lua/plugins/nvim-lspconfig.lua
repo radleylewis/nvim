@@ -117,6 +117,7 @@ local config = function()
 	local shfmt = require("efmls-configs.formatters.shfmt")
 	local alex = require("efmls-configs.linters.alex")
 	local hadolint = require("efmls-configs.linters.hadolint")
+	local solhint = require("efmls-configs.linters.solhint")
 
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -134,6 +135,7 @@ local config = function()
 			"vue",
 			"markdown",
 			"docker",
+			"solidity",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -158,6 +160,7 @@ local config = function()
 				vue = { eslint_d, prettierd },
 				markdown = { alex, prettierd },
 				docker = { hadolint, prettierd },
+				solidity = { solhint },
 			},
 		},
 	})
