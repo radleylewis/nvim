@@ -38,12 +38,12 @@ keymap.set("n", "<leader>f", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" }
 keymap.set("n", "<leader>pa", "[[Cmd]]echo expand('%:p')<CR>", opts)
 
 -- Move Lines
-keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
-keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
-keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+-- keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+-- keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+-- keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+-- keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+-- keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+-- keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- better indenting
 keymap.set("v", "<", "<gv")
