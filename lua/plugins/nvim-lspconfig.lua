@@ -115,7 +115,7 @@ local config = function()
 	local fixjson = require("efmls-configs.formatters.fixjson")
 	local shellcheck = require("efmls-configs.linters.shellcheck")
 	local shfmt = require("efmls-configs.formatters.shfmt")
-	local markdownlint = require("efmls-configs.linters.markdownlint")
+	local alex = require("efmls-configs.linters.alex")
 	local hadolint = require("efmls-configs.linters.hadolint")
 
 	-- configure efm server
@@ -156,7 +156,7 @@ local config = function()
 				typescriptreact = { eslint_d, prettierd },
 				svelte = { eslint_d, prettierd },
 				vue = { eslint_d, prettierd },
-				markdown = { markdownlint, prettierd },
+				markdown = { alex, prettierd },
 				docker = { hadolint, prettierd },
 			},
 		},
