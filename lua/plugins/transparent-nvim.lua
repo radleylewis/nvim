@@ -2,7 +2,7 @@ return {
 	"xiyaowong/transparent.nvim",
 	lazy = false,
 	config = function()
-    vim.cmd[[hi StatusLine ctermbg=0 cterm=NONE]]
+		vim.cmd([[hi StatusLine ctermbg=0 cterm=NONE]])
 		require("transparent").setup({ -- Optional, you don't have to run setup.
 			groups = { -- table: default groups
 				"Normal",
@@ -27,10 +27,12 @@ return {
 				"SignColumn",
 				"CursorLineNr",
 				"EndOfBuffer",
+				"InsertEnter",
 			},
 			extra_groups = {
+				"CursorLine",
 				"NormalFloat",
-        "TablineFill",
+				"TablineFill",
 			}, -- table: additional groups that should be cleared
 			exclude_groups = {}, -- table: groups you don't want to clear
 		})
