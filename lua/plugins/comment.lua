@@ -9,7 +9,6 @@ return {
 			line = "goc",
 			block = "gob",
 		},
-		-- add any options here
 	},
 	lazy = false,
 }

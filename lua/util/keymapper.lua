@@ -39,18 +39,17 @@ local get_cmd_string = function(command)
 	return [[<cmd>]] .. command .. [[<CR>]]
 end
 
---- @param keybind string String
+--- @param keymaps string String
 --- @param command string String
 --- @param vimmode (string|nil)
 --- @param options (table|nil)
 --- @return nil
-local mapkey = function(keybind, command, vimmode, options)
+local mapkey = function(keymaps, command, vimmode, options)
 	local mode = get_mode(vimmode)
+	local lhs = keymaps
+	local rhs = get_cmd_string(command)
 	local opts = get_opts(options)
-	local cmd = get_cmd_string(command)
-	vim.keymap.set(mode, keybind, cmd, opts)
+	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
-return {
-	mapkey = mapkey,
-}
+return { mapkey = mapkey }
