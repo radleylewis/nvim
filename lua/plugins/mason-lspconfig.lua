@@ -1,10 +1,18 @@
 local opts = {
 	ensure_installed = {
 		"efm",
-		"lua_ls",
+		"bashls",
 		"tsserver",
-    "jsonls",
+		"solidity",
+		"tailwindcss",
+		"pyright",
+		"html",
+		"cssls",
+		"lua_ls",
+		"emmet_ls",
+		"jsonls",
 	},
+
 	automatic_installation = true,
 }
 
