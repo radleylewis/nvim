@@ -1,4 +1,4 @@
-local mapkeys = require("util").mapkeys
+local mapkey = require("util.keymapper").mapkey
 
 local config = function()
 	local telescope = require("telescope")
@@ -23,6 +23,7 @@ local config = function()
 			},
 			buffers = {
 				theme = "dropdown",
+				previewer = false,
 			},
 		},
 	})
@@ -31,13 +32,14 @@ end
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.3",
+	lazy = false,
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = config,
 	keys = {
-		mapkeys([[<leader>fk]], [[Telescope keymaps]]),
-		mapkeys([[<leader>fh]], [[Telescope help_tags]]),
-		mapkeys([[<leader>ff]], [[Telescope find_files]]),
-		mapkeys([[<leader>fg]], [[Telescope live_grep]]),
-		mapkeys([[<leader>fb]], [[Telescope buffers]]),
+		mapkey("<leader>fk", "Telescope keymaps", "n"),
+		mapkey("<leader>fh", "Telescope help_tags", "n"),
+		mapkey("<leader>ff", "Telescope find_files", "n"),
+		mapkey("<leader>fg", "Telescope live_grep", "n"),
+		mapkey("<leader>fb", "Telescope buffers", "n"),
 	},
 }

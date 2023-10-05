@@ -1,5 +1,4 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -10,26 +9,33 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
-
 vim.opt.rtp:prepend(lazypath)
 
 require("config.globals")
-require("config.keymaps")
 require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+
+local plugins = "plugins"
 
 local opts = {
 	defaults = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "nord" },
+		colorscheme = { "gruvbox" },
 	},
 	rtp = {
 		disabled_plugins = {
+			"gzip",
+			"matchit",
+			"matchparen",
 			"netrw",
 			"netrwPlugin",
-			"netrwSettings",
-			"netrwFileHandlers",
+			"tarPlugin",
+			"tohtml",
+			"tutor",
+			"zipPlugin",
 		},
 	},
 	change_detection = {
@@ -37,4 +43,4 @@ local opts = {
 	},
 }
 
-require("lazy").setup({ import = "plugins" }, opts)
+require("lazy").setup(plugins, opts)

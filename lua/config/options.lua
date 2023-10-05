@@ -1,62 +1,44 @@
-local options = vim.opt
+local opt = vim.opt
 
--- Tabs / Indentation
-options.tabstop = 2
-options.shiftwidth = 2
-options.softtabstop = 2
-options.expandtab = true
-options.smartindent = true
-options.wrap = false
+-- Tab / Indentation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.expandtab = true
+opt.smartindent = true
+opt.wrap = false
 
 -- Search
-options.incsearch = true
-options.ignorecase = true
-options.smartcase = true
-options.hlsearch = false
+opt.incsearch = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = false
 
 -- Appearance
-options.relativenumber = true
-options.termguicolors = true
-options.colorcolumn = "100"
-options.signcolumn = "yes"
-options.number = true
-options.cmdheight = 1
-options.scrolloff = 10
-options.completeopt = "menuone,noinsert,noselect"
+opt.number = true
+opt.relativenumber = true
+opt.termguicolors = true
+opt.colorcolumn = "100"
+opt.signcolumn = "yes"
+opt.cmdheight = 1
+opt.scrolloff = 10
+opt.completeopt = "menuone,noinsert,noselect"
 
 -- Behaviour
-options.hidden = true
-options.errorbells = false
-options.swapfile = false
-options.backup = false
-options.undodir = vim.fn.expand("~/.vim/undodir")
-options.undofile = true
-options.backup = false
-options.showmode = false
-options.updatetime = 50
-options.backspace = "indent,eol,start"
-options.splitright = true
-options.splitbelow = true
-options.autochdir = false
-options.iskeyword:append("-")
-options.mouse:append("a")
-options.clipboard:append("unnamedplus")
-options.modifiable = true
-
--- Other
-options.exrc = true
-options.guicursor =
-"n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
-options.backspace = "indent,eol,start"
-options.encoding = "UTF-8"
-
-options.listchars.eol = "↵"
-options.listchars:append({ tab = "➤ " })
-options.listchars:append({ nbsp = "␣" })
-options.listchars:append({ trail = "»" })
-options.listchars:append({ extends = "▶" })
-options.listchars:append({ precedes = "◀" })
-
-options.showbreak = "↪ "
-
-options.list = true
+opt.hidden = true
+opt.errorbells = false
+opt.swapfile = false
+opt.backup = false
+opt.undodir = vim.fn.expand("~/.vim/undodir")
+opt.undofile = true
+opt.backspace = "indent,eol,start"
+opt.splitright = true
+opt.splitbelow = true
+opt.autochdir = false
+opt.iskeyword:append("-")
+opt.mouse:append("a")
+opt.clipboard:append("unnamedplus")
+opt.modifiable = true
+opt.guicursor =
+	"n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+opt.encoding = "UTF-8"
