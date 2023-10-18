@@ -36,6 +36,15 @@ mapkey(">", "v", ">gv") -- Shift Indentation to Right
 -- Show Full File-Path
 mapkey("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path
 
+local api = vim.api
+
+-- Zen Mode
+api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
+api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
+api.nvim_set_keymap("n", "<leader>zf", ":TZFocus<CR>", {})
+api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", {})
+api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
+
 -- Comments
-vim.api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
-vim.api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
+api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
+api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
