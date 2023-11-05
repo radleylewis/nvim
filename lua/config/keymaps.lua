@@ -27,7 +27,6 @@ mapkey("<C-l>", "TmuxNavigateRight", "n") -- Navigate Right
 -- Window Management
 mapkey("<leader>sv", "vsplit", "n") -- Split Vertically
 mapkey("<leader>sh", "split", "n") -- Split Horizontally
-mapkey("<leader>sm", "MaximizerToggle", "n") -- Toggle Minimise
 
 -- Indenting
 mapkey("<", "v", "<gv") -- Shift Indentation to Left
@@ -41,7 +40,7 @@ local api = vim.api
 -- Zen Mode
 api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
 api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
-api.nvim_set_keymap("n", "<leader>zf", ":TZFocus<CR>", {})
+api.nvim_set_keymap("n", "<leader>sm", ":TZFocus<CR>", {})
 api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", {})
 api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
 

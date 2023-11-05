@@ -115,7 +115,6 @@ local config = function()
 	local fixjson = require("efmls-configs.formatters.fixjson")
 	local shellcheck = require("efmls-configs.linters.shellcheck")
 	local shfmt = require("efmls-configs.formatters.shfmt")
-	local alex = require("efmls-configs.linters.alex")
 	local hadolint = require("efmls-configs.linters.hadolint")
 	local solhint = require("efmls-configs.linters.solhint")
 
@@ -136,6 +135,8 @@ local config = function()
 			"markdown",
 			"docker",
 			"solidity",
+			"html",
+			"css",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -158,9 +159,11 @@ local config = function()
 				typescriptreact = { eslint_d, prettierd },
 				svelte = { eslint_d, prettierd },
 				vue = { eslint_d, prettierd },
-				markdown = { alex, prettierd },
+				markdown = { prettierd },
 				docker = { hadolint, prettierd },
 				solidity = { solhint },
+				html = { prettierd },
+				css = { prettierd },
 			},
 		},
 	})
