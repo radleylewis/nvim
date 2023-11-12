@@ -72,7 +72,7 @@ local config = function()
 	lspconfig.bashls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		filetypes = { "sh" },
+		filetypes = { "sh", "aliasrc" },
 	})
 
 	-- solidity
@@ -106,6 +106,16 @@ local config = function()
 		on_attach = on_attach,
 	})
 
+	-- C
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+    cmd = {
+      "clangd",
+      "--offset-encoding=utf-16",
+    },
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
@@ -117,6 +127,8 @@ local config = function()
 	local shfmt = require("efmls-configs.formatters.shfmt")
 	local hadolint = require("efmls-configs.linters.hadolint")
 	local solhint = require("efmls-configs.linters.solhint")
+	local cpplint = require("efmls-configs.linters.cpplint")
+	local clangformat = require("efmls-configs.formatters.clang_format")
 
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -137,6 +149,8 @@ local config = function()
 			"solidity",
 			"html",
 			"css",
+			"c",
+			"cpp",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -164,6 +178,8 @@ local config = function()
 				solidity = { solhint },
 				html = { prettierd },
 				css = { prettierd },
+				c = { clangformat, cpplint },
+				cpp = { clangformat, cpplint },
 			},
 		},
 	})
