@@ -82,12 +82,11 @@ local config = function()
 		filetypes = { "solidity" },
 	})
 
-	-- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
+	-- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
 	lspconfig.emmet_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = {
-			"html",
 			"typescriptreact",
 			"javascriptreact",
 			"javascript",
@@ -97,6 +96,7 @@ local config = function()
 			"less",
 			"svelte",
 			"vue",
+			"html",
 		},
 	})
 
@@ -106,14 +106,14 @@ local config = function()
 		on_attach = on_attach,
 	})
 
-	-- C
+	-- C/C++
 	lspconfig.clangd.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-    cmd = {
-      "clangd",
-      "--offset-encoding=utf-16",
-    },
+		cmd = {
+			"clangd",
+			"--offset-encoding=utf-16",
+		},
 	})
 
 	local luacheck = require("efmls-configs.linters.luacheck")
@@ -121,7 +121,7 @@ local config = function()
 	local flake8 = require("efmls-configs.linters.flake8")
 	local black = require("efmls-configs.formatters.black")
 	local eslint_d = require("efmls-configs.linters.eslint_d")
-	local prettierd = require("efmls-configs.formatters.prettier_d")
+	local prettier_d = require("efmls-configs.formatters.prettier_d")
 	local fixjson = require("efmls-configs.formatters.fixjson")
 	local shellcheck = require("efmls-configs.linters.shellcheck")
 	local shfmt = require("efmls-configs.formatters.shfmt")
@@ -164,20 +164,20 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				python = { flake8, black },
-				typescript = { eslint_d, prettierd },
+				typescript = { eslint_d, prettier_d },
 				json = { eslint_d, fixjson },
 				jsonc = { eslint_d, fixjson },
 				sh = { shellcheck, shfmt },
-				javascript = { eslint_d, prettierd },
-				javascriptreact = { eslint_d, prettierd },
-				typescriptreact = { eslint_d, prettierd },
-				svelte = { eslint_d, prettierd },
-				vue = { eslint_d, prettierd },
-				markdown = { prettierd },
-				docker = { hadolint, prettierd },
+				javascript = { eslint_d, prettier_d },
+				javascriptreact = { eslint_d, prettier_d },
+				typescriptreact = { eslint_d, prettier_d },
+				svelte = { eslint_d, prettier_d },
+				vue = { eslint_d, prettier_d },
+				markdown = { prettier_d },
+				docker = { hadolint, prettier_d },
 				solidity = { solhint },
-				html = { prettierd },
-				css = { prettierd },
+				html = { prettier_d },
+				css = { prettier_d },
 				c = { clangformat, cpplint },
 				cpp = { clangformat, cpplint },
 			},
