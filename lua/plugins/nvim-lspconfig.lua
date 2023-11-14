@@ -1,4 +1,5 @@
 local on_attach = require("util.lsp").on_attach
+local ts_goto_source_definition = require("util.lsp").ts_goto_source_definition
 local diagnostic_signs = require("util.lsp").diagnostic_signs
 
 local config = function()
@@ -64,6 +65,9 @@ local config = function()
 		capabilities = capabilities,
 		filetypes = {
 			"typescript",
+		},
+		handlers = {
+			["textDocument/definition"] = ts_goto_source_definition,
 		},
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
