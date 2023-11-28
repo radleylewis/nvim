@@ -27,10 +27,14 @@ mapkey("<C-l>", "TmuxNavigateRight", "n") -- Navigate Right
 -- Window Management
 mapkey("<leader>sv", "vsplit", "n") -- Split Vertically
 mapkey("<leader>sh", "split", "n") -- Split Horizontally
+mapkey("<C-Up>", "resize +2", "n")
+mapkey("<C-Down>", "resize -2", "n")
+mapkey("<C-Left>", "vertical resize +2", "n")
+mapkey("<C-Right>", "vertical resize -2", "n")
 
 -- Indenting
-mapkey("<", "v", "<gv") -- Shift Indentation to Left
-mapkey(">", "v", ">gv") -- Shift Indentation to Right
+vim.keymap.set("v", "<", "<gv", { silent = true, noremap = true })
+vim.keymap.set("v", ">", ">gv", { silent = true, noremap = true })
 
 -- Show Full File-Path
 mapkey("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path
