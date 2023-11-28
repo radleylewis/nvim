@@ -23,7 +23,7 @@ local opts = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "gruvbox" },
+		colorscheme = { "catppuccin" },
 	},
 	rtp = {
 		disabled_plugins = {
