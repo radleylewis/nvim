@@ -27,7 +27,7 @@ Welcome to my NeoVim config. Use it for inspiration.
 [trouble](https://github.com/nvim-tree/nvim-web-devicons) - prettier diagnostics  
 [vim-highlightedyank](machakann/vim-highlightedyank) - highlights yanked text  
 [vim-illuminate](https://github.com/RRethy/vim-illuminate) - illuminates instances of word under cursor  
-[whichkey](https://github.com/folke/which-key.nvim) - shortcut hints
+[whichkey](https://github.com/folke/which-key.nvim) - shortcut hints  
 [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim) - establish better vim habits
 
 ## neovim version supported
