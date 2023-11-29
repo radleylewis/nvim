@@ -1,6 +1,6 @@
 # Neovim Config
 
-Welcome to my NeoVim config. Use it for inspiration. 
+Welcome to my NeoVim config. Use it for inspiration.
 
 ## plugins
 
@@ -16,7 +16,7 @@ Welcome to my NeoVim config. Use it for inspiration.
 [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim) - Better mason and lsp-config integration  
 [efm-langserver](https://github.com/mattn/efm-langserver) - Linting and Formatting  
 [mason](https://github.com/williamboman/mason.nvim) - LSP installation management  
-[gruvbox](https://github.com/morhetz/gruvbox) - gruvbox colourscheme  
+[catppuccin](https://github.com/morhetz/gruvbo) - catppuccin colourscheme  
 [noice](https://github.com/folke/noice.nvim) - vim commandline ui  
 [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - autopair completion  
 [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - auto-completion support  
@@ -24,11 +24,11 @@ Welcome to my NeoVim config. Use it for inspiration.
 [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - file icons  
 [telescope](https://github.com/nvim-telescope/telescope.nvim) - fuzzy finder  
 [tmux-navigator](https;//github.com/christoomey/vim-tmux-navigator) - tmux window navigation  
-[transparent](https://github.com/xiyaowong/transparent.nvim) - background transparency  
 [trouble](https://github.com/nvim-tree/nvim-web-devicons) - prettier diagnostics  
 [vim-highlightedyank](machakann/vim-highlightedyank) - highlights yanked text  
 [vim-illuminate](https://github.com/RRethy/vim-illuminate) - illuminates instances of word under cursor  
 [whichkey](https://github.com/folke/which-key.nvim) - shortcut hints
+[hardtime.nvim](https://github.com/m4xshen/hardtime.nvim) - establish better vim habits
 
 ## neovim version supported
 
