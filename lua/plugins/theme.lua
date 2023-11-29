@@ -4,8 +4,6 @@ return {
 	priority = 999,
 	config = function()
 		vim.cmd("colorscheme catppuccin")
-		require("catppuccin").setup({
-			-- transparent_background = true,
-		})
+		require("catppuccin").setup({})
 	end,
 }
