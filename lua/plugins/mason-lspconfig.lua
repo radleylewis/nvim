@@ -1,5 +1,6 @@
 local opts = {
 	ensure_installed = {
+		"js-debug-adapter",
 		"efm",
 		"bashls",
 		"tsserver",
