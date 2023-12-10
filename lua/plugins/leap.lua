@@ -1,4 +1,5 @@
 local opts = {
+  lazy = false,
 	opts = {
 		highlight_ahead_of_time = true,
 		highlight_unlabeled = false,
