@@ -17,7 +17,9 @@ M.on_attach = function(client, bufnr)
 	mapkey("K", "Lspsaga hover_doc", "n", opts) -- show documentation for what is under cursor
 
 	if client.name == "pyright" then
-		mapkey("<Leader>oi", "PyrightOrganizeImports", "n", opts)
+		mapkey("<leader>oi", "PyrightOrganizeImports", "n", opts) -- organise imports
+		mapkey("<leader>db", "DapToggleBreakpoint", "n", opts) -- toggle breakpoint
+		mapkey("<leader>dt", "lua require('dap-python').test_method()", "n", opts) -- run tests
 	end
 end
 
