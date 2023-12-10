@@ -1,5 +1,7 @@
 local opts = {
 	ensure_installed = {
+		"rust-analyzer",
+		"codelldb",
 		"js-debug-adapter",
 		"efm",
 		"bashls",

@@ -44,3 +44,7 @@ opt.guicursor =
 opt.encoding = "UTF-8"
 opt.showmode = false
 
+-- folds
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevel = 99 -- unfold all by default

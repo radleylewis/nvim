@@ -12,6 +12,7 @@ local config = function()
 			"BufNewFile",
 		},
 		ensure_installed = {
+			"rust",
 			"markdown",
 			"json",
 			"javascript",
@@ -27,6 +28,8 @@ local config = function()
 			"gitignore",
 			"python",
 			"vue",
+			"svelte",
+			"toml",
 		},
 		auto_install = true,
 		highlight = {
