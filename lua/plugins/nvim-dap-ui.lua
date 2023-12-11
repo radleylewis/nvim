@@ -1,17 +1,16 @@
 return {
 	"rcarriga/nvim-dap-ui",
 	config = function()
-		local dap = require("dap")
-		local dui = require("dapui")
-		dui.setup()
+		local dap, dapui = require("dap"), require("dapui")
+		dapui.setup()
 		dap.listeners.after.event_initialized["dapui_config"] = function()
-			dui.open()
+			dapui.open()
 		end
 		dap.listeners.before.event_terminated["dapui_config"] = function()
-			dui.close()
+			dapui.close()
 		end
 		dap.listeners.before.event_exited["dapui_config"] = function()
-			dui.close()
+			dapui.close()
 		end
 	end,
 	dependencies = {

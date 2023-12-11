@@ -19,7 +19,7 @@ M.on_attach = function(client, bufnr)
 	if client.name == "pyright" then
 		mapkey("<leader>oi", "PyrightOrganizeImports", "n", opts) -- organise imports
 		mapkey("<leader>db", "DapToggleBreakpoint", "n", opts) -- toggle breakpoint
-		mapkey("<leader>dt", "lua require('dap-python').test_method()", "n", opts) -- run tests
+		-- mapkey("<leader>dt", "lua require('dap-python').test_method()", "n", opts) -- run tests
 	end
 end
 
