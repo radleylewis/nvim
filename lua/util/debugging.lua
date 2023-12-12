@@ -15,20 +15,30 @@ local divider_for_launch_configs = {
 	name = "----- ↓ launch.json configs ↓ -----",
 }
 
+M.icons = {
+	Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
+	Breakpoint = " ",
+	BreakpointCondition = " ",
+	BreakpointRejected = { " ", "DiagnosticError" },
+	LogPoint = ".>",
+}
+
 M.typescript = function()
 	return {
-		-- launch single file
-		name = "[TS] Launch Single File (pwa-node)",
-		runtimeExecutable = "ts-node",
-		type = "pwa-node",
-		request = "launch",
-		cwd = vim.fn.getcwd(),
-		args = { "${file}" },
-		sourceMaps = true,
-		skipFiles = { "<node_internals>/**", "node_modules/**" },
-		resolveSourceMapLocations = {
-			"${workspaceFolder}/**",
-			"!**/node_modules/**",
+		{
+			-- launch single file
+			name = "[TS] Launch Single File (pwa-node)",
+			runtimeExecutable = "ts-node",
+			type = "pwa-node",
+			request = "launch",
+			cwd = vim.fn.getcwd(),
+			args = { "${file}" },
+			sourceMaps = true,
+			skipFiles = { "<node_internals>/**", "node_modules/**" },
+			resolveSourceMapLocations = {
+				"${workspaceFolder}/**",
+				"!**/node_modules/**",
+			},
 		},
 		node_pick_process,
 		divider_for_launch_configs,
