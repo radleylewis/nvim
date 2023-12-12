@@ -36,7 +36,8 @@ opt.splitright = true
 opt.splitbelow = true
 opt.autochdir = false
 opt.iskeyword:append("-")
-opt.mouse:append("a")
+opt.selection = "exclusive"
+opt.mouse = "a"
 opt.clipboard:append("unnamedplus")
 opt.modifiable = true
 opt.guicursor =
@@ -47,4 +48,4 @@ opt.showmode = false
 -- folds
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevel = 99 -- unfold all by default
+opt.foldlevel = 99
