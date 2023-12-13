@@ -1,5 +1,3 @@
-local maplazykey = require("util.keymapper").maplazykey
-
 return {
 	"mfussenegger/nvim-dap-python",
 	ft = "python", -- filetype
