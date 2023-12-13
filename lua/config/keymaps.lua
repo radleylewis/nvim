@@ -1,4 +1,4 @@
-local mapkey = require("util.keymapper").mapkey
+local mapkey = require("util.keymapper").mapvimkey
 
 -- Buffer Navigation
 mapkey("<leader>bn", "bnext", "n") -- Next buffer

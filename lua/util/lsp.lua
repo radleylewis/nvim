@@ -1,4 +1,4 @@
-local mapkey = require("util.keymapper").mapkey
+local mapkey = require("util.keymapper").mapvimkey
 
 local M = {}
 
@@ -22,7 +22,5 @@ M.on_attach = function(client, bufnr)
 		-- mapkey("<leader>dt", "lua require('dap-python').test_method()", "n", opts) -- run tests
 	end
 end
-
-M.diagnostic_signs = { Error = " ", Warn = " ", Hint = "󱧤", Info = "" }
 
 return M

@@ -1,4 +1,4 @@
-local mapkey = require("util.keymapper").mapkey
+local mapkey = require("util.keymapper").maplazykey
 
 local config = function()
 	local telescope = require("telescope")
