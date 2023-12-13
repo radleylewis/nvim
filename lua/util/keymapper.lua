@@ -54,7 +54,7 @@ end
 
 --- @param keymaps string
 --- @param cmd (function|string)
---- @param desc (table|nil)
+--- @param desc (string|nil)
 --- @return table
 local maplazykey = function(keymaps, cmd, desc)
 	if type(cmd) ~= "function" then

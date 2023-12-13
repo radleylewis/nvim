@@ -1,12 +1,13 @@
+local debugging_signs = require("util.icons").debugging_signs
+
 return {
 	"mfussenegger/nvim-dap",
 	config = function()
-		local configs = require("util.debugging")
 		local dap = require("dap")
 		local dapui = require("dapui")
 
 		-- set custom icons
-		for name, sign in pairs(configs.icons) do
+		for name, sign in pairs(debugging_signs) do
 			sign = type(sign) == "table" and sign or { sign }
 			vim.fn.sign_define(
 				"Dap" .. name,
@@ -33,10 +34,6 @@ return {
 			dapui.close()
 			vim.cmd("Hardtime enable")
 		end
-
-		-- configure debug adapter protocols
-		dap.configurations.typescript = configs.typescript()
-		dap.configurations.javascript = configs.javascript()
 	end,
 	dependencies = "rcarriga/nvim-dap-ui",
 }

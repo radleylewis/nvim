@@ -17,21 +17,21 @@ return {
 	keys = {
 		maplazykey("<leader>xx", function()
 			require("trouble").toggle()
-		end),
+		end, "Toggle Trouble"),
 		maplazykey("<leader>xw", function()
 			require("trouble").toggle("workspace_diagnostics")
-		end),
+		end, "Show Workspace Diagnostics"),
 		maplazykey("<leader>xd", function()
 			require("trouble").toggle("document_diagnostics")
-		end),
+		end, "Show Document Diagnostics"),
 		maplazykey("<leader>xq", function()
 			require("trouble").toggle("quickfix")
-		end),
+		end, "Toggle Quickfix List"),
 		maplazykey("<leader>xl", function()
 			require("trouble").toggle("loclist")
-		end),
+		end, "Toggle Location List"),
 		maplazykey("gR", function()
 			require("trouble").toggle("lsp_references")
-		end),
+		end, "Toggle LSP References"),
 	},
 }
