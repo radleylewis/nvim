@@ -7,11 +7,11 @@ return {
 	opts = {
 		signs = {
 			-- icons / text used for a diagnostic
-			error = diagnostic_signs.error,
-			warning = diagnostic_signs.warn,
-			hint = diagnostic_signs.hint,
-			information = diagnostic_signs.info,
-			other = diagnostic_signs.info,
+			error = diagnostic_signs.Error,
+			warning = diagnostic_signs.Warn,
+			hint = diagnostic_signs.Hint,
+			information = diagnostic_signs.Info,
+			other = diagnostic_signs.Info,
 		},
 	},
 	keys = {

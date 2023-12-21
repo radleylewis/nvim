@@ -9,10 +9,10 @@ M.debugging_signs = {
 }
 
 M.diagnostic_signs = {
-	error = " ",
-	warn = " ",
-	hint = "",
-	info = "",
+	Error = " ",
+	Warn = " ",
+	Hint = "",
+	Info = "",
 }
 
 return M
