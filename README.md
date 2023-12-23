@@ -24,7 +24,7 @@ Welcome to my NeoVim config. Use it for inspiration.
 [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - file icons  
 [telescope](https://github.com/nvim-telescope/telescope.nvim) - fuzzy finder  
 [tmux-navigator](https;//github.com/christoomey/vim-tmux-navigator) - tmux window navigation  
-[trouble](https://github.com/nvim-tree/nvim-web-devicons) - prettier diagnostics  
+[trouble](https://github.com/folke/trouble.nvim) - diagnostics  
 [vim-highlightedyank](machakann/vim-highlightedyank) - highlights yanked text  
 [vim-illuminate](https://github.com/RRethy/vim-illuminate) - illuminates instances of word under cursor  
 [whichkey](https://github.com/folke/which-key.nvim) - shortcut hints  
