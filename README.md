@@ -25,10 +25,9 @@ Welcome to my NeoVim config. Use it for inspiration.
 [telescope](https://github.com/nvim-telescope/telescope.nvim) - fuzzy finder  
 [tmux-navigator](https;//github.com/christoomey/vim-tmux-navigator) - tmux window navigation  
 [trouble](https://github.com/folke/trouble.nvim) - diagnostics  
-[vim-highlightedyank](machakann/vim-highlightedyank) - highlights yanked text  
 [vim-illuminate](https://github.com/RRethy/vim-illuminate) - illuminates instances of word under cursor  
 [whichkey](https://github.com/folke/which-key.nvim) - shortcut hints  
-[hardtime.nvim](https://github.com/m4xshen/hardtime.nvim) - establish better vim habits
+[hardtime.nvim](https://github.com/m4xshen/hardtime.nvim) - establish better vim habits  
 
 ## neovim version supported
 
