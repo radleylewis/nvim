@@ -22,6 +22,22 @@ M.on_attach = function(client, bufnr)
 		mapkey("<leader>dr", "DapContinue", "n", opts) -- continue/invoke debugger
 		mapkey("<leader>dt", "lua require('dap-python').test_method()", "n", opts) -- run tests
 	end
+
+	if client.name == "tsserver" then
+		mapkey("<leader>oi", "TypeScriptOrganizeImports", "n", opts) -- organise imports
+	end
 end
+
+M.typescript_organise_imports = {
+	description = "Organise Imports",
+	function()
+		local params = {
+			command = "_typescript.organizeImports",
+			arguments = { vim.fn.expand("%:p") },
+		}
+		-- reorganise imports
+		vim.lsp.buf.execute_command(params)
+	end,
+}
 
 return M
