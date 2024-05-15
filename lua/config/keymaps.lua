@@ -33,7 +33,7 @@ mapkey("<C-Left>", "vertical resize +2", "n")
 mapkey("<C-Right>", "vertical resize -2", "n")
 
 -- Show Full File-Path
-mapkey("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path
+mapkey("<leader>pa", "ShowPath", "n") -- Show Full File Path
 
 -- Notes
 mapkey("<leader>ng", "Neorg workspace general", "n")
