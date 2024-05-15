@@ -1,4 +1,18 @@
-local mapvimkey = require("util.keymapper").mapvimkey
+local keys = {
+	{ "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer search" },
+	{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+	{ "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Commits" },
+	{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find All Files" },
+	{ "<C-p>", "<cmd>Telescope git_files<cr>", desc = "Git files" },
+	{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
+	{ "<leader>fj", "<cmd>Telescope command_history<cr>", desc = "History" },
+	{ "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+	{ "<leader>fl", "<cmd>Telescope lsp_references<cr>", desc = "Lsp References" },
+	{ "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
+	{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Ripgrep" },
+	{ "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Grep String" },
+	{ "<leader>ft", "<cmd>Telescope treesitter<cr>", desc = "Treesitter" },
+}
 
 local config = function()
 	local telescope = require("telescope")
@@ -12,34 +26,39 @@ local config = function()
 			},
 		},
 		pickers = {
+			live_grep = {
+				file_ignore_patterns = { "node_modules", ".venv" },
+				additional_args = function(_)
+					return { "--hidden", "--no-ignore-vcs" }
+				end,
+				hidden = true,
+				no_ignore = true,
+			},
 			find_files = {
-				theme = "dropdown",
-				previewer = true,
+				file_ignore_patterns = { "node_modules", ".venv" },
+				additional_args = function(_)
+					return { "--hidden", "--no-ignore-vcs" }
+				end,
+				no_ignore = true,
 				hidden = true,
 			},
-			live_grep = {
-				theme = "dropdown",
-				previewer = true,
-			},
-			buffers = {
-				theme = "dropdown",
-				previewer = true,
-			},
+		},
+		extensions = {
+			"fzf",
 		},
 	})
+	telescope.load_extension("fzf")
 end
 
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.3",
-	lazy = false,
-	dependencies = { "nvim-lua/plenary.nvim" },
-	config = config,
-	keys = {
-		mapvimkey("<leader>fk", "Telescope keymaps", "Show Keymaps"),
-		mapvimkey("<leader>fh", "Telescope help_tags", "Show Help Tags"),
-		mapvimkey("<leader>ff", "Telescope find_files", "Find Files"),
-		mapvimkey("<leader>fg", "Telescope live_grep", "Live Grep"),
-		mapvimkey("<leader>fb", "Telescope buffers", "Find Buffers"),
+	dependencies = {
+		{ "nvim-lua/plenary.nvim" },
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+		},
 	},
+	keys = keys,
+	config = config,
 }
