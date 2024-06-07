@@ -1,10 +1,18 @@
 return {
-	"catppuccin/nvim",
-	name = "theme",
-	lazy = false,
-	priority = 999,
-	config = function()
-		vim.cmd("colorscheme catppuccin")
-		require("catppuccin").setup({})
-	end,
+	{
+		"xiyaowong/nvim-transparent",
+		lazy = false,
+	},
+	{
+		"catppuccin/nvim",
+		name = "theme",
+		lazy = false,
+		priority = 999,
+		config = function()
+			vim.cmd("colorscheme catppuccin")
+			require("catppuccin").setup({
+				transparent_background = true,
+			})
+		end,
+	},
 }
