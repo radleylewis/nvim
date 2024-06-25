@@ -12,6 +12,8 @@ local config = function()
 			"BufNewFile",
 		},
 		ensure_installed = {
+			"vim",
+			"regex",
 			"rust",
 			"markdown",
 			"json",
