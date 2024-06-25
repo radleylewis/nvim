@@ -1,7 +1,6 @@
 {
     "diagnostics.globals": [
         "vim",
-        "let"
     ],
     "diagnostics.disable": [
         "different-requires",
