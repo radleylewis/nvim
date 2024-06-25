@@ -2,17 +2,12 @@ return {
 	{
 		"xiyaowong/nvim-transparent",
 		lazy = false,
+    priority = 999
 	},
 	{
-		"catppuccin/nvim",
-		name = "theme",
-		lazy = false,
-		priority = 999,
-		config = function()
-			vim.cmd("colorscheme catppuccin")
-			require("catppuccin").setup({
-				transparent_background = true,
-			})
-		end,
-	},
+    "EdenEast/nightfox.nvim",
+    config = function()
+      vim.cmd('colorscheme carbonfox')
+    end,
+  }
 }

@@ -1,7 +1,8 @@
 local config = function()
+  vim.cmd 'hi StatusLine guibg=NONE ctermbg=NONE'
 	require("lualine").setup({
 		options = {
-			theme = "auto",
+			theme = "carbonfox",
 			globalstatus = true,
 			component_separators = { left = "|", right = "|" },
 			section_separators = { left = "", right = "" },
