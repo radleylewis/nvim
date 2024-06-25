@@ -4,9 +4,9 @@ Welcome to my NeoVim config. Use it for inspiration.
 
 ## plugins
 
-[lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager  
 [comment.nvim](https://github.com/numToStr/Comment.nvim) - Commenting  
 [copilot](https://github.com/zbirenbaum/copilot.lua) - Github copilot integration  
+[lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager  
 [gitsigns](https://github.com/lewis6991/gitsigns.nvim) - Git status signs  
 [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indentation UI  
 [lspconfig](https://github.com/neovim/nvim-lspconfig) - Language Server Protocol support  

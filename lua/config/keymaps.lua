@@ -46,13 +46,6 @@ vim.keymap.set("v", ">", ">gv", { silent = true, noremap = true })
 
 local api = vim.api
 
--- Zen Mode
-api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
-api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
-api.nvim_set_keymap("n", "<leader>sm", ":TZFocus<CR>", {})
-api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", {})
-api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
-
 -- Comments
-api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
-api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
+api.nvim_set_keymap("n", "<C-/>", "gtc", { noremap = false })
+api.nvim_set_keymap("v", "<C-/>", "goc", { noremap = false })
