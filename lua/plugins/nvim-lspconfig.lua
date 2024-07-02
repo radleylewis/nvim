@@ -174,6 +174,7 @@ local config = function()
 		},
 		settings = {
 			languages = {
+				solidity = { solhint, prettier_d },
 				lua = { luacheck, stylua },
 				python = { flake8, black },
 				typescript = { eslint, prettier_d },
@@ -187,7 +188,6 @@ local config = function()
 				vue = { eslint, prettier_d },
 				markdown = { prettier_d },
 				docker = { hadolint, prettier_d },
-				solidity = { solhint, prettier_d },
 				html = { prettier_d },
 				css = { prettier_d },
 				c = { clangformat, cpplint },

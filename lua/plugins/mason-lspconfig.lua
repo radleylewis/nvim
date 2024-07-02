@@ -1,23 +1,41 @@
-local opts = {
-	ensure_installed = {
-		"efm",
-		"bashls",
-		"tsserver",
-		"solidity_ls",
-		"tailwindcss",
-		"pyright",
-		"lua_ls",
-		"emmet_ls",
-		"jsonls",
-		"clangd",
-		"dockerls",
+local mason = {
+	"williamboman/mason.nvim",
+	cmd = "Mason",
+	event = "BufReadPre",
+	opts = {
+		ui = {
+			icons = {
+				package_installed = "✓",
+				package_pending = "➜",
+				package_uninstalled = "✗",
+			},
+		},
 	},
-	automatic_installation = true,
+}
+
+local mason_lspconfig = {
+	"williamboman/mason-lspconfig.nvim",
+	opts = {
+		ensure_installed = {
+			"efm",
+			"bashls",
+			"tsserver",
+			"solidity_ls",
+			"tailwindcss",
+			"pyright",
+			"lua_ls",
+			"emmet_ls",
+			"jsonls",
+			"clangd",
+			"dockerls",
+		},
+		automatic_installation = true,
+	},
+	event = "BufReadPre",
+	dependencies = "williamboman/mason.nvim",
 }
 
 return {
-	"williamboman/mason-lspconfig.nvim",
-	opts = opts,
-	event = "BufReadPre",
-	dependencies = "williamboman/mason.nvim",
+	mason,
+	mason_lspconfig,
 }
