@@ -8,10 +8,13 @@ local config = function()
 	local lspconfig = require("lspconfig")
 	local capabilities = cmp_nvim_lsp.default_capabilities()
 
-	for type, icon in pairs(diagnostic_signs) do
-		local hl = "DiagnosticSign" .. type
-		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-	end
+	-- solidity
+	lspconfig.solidity_ls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "solidity" },
+		root_dir = lspconfig.util.root_pattern("hardhat.config.*", ".git"),
+	})
 
 	-- lua
 	lspconfig.lua_ls.setup({
@@ -86,14 +89,6 @@ local config = function()
 		filetypes = { "sh", "aliasrc" },
 	})
 
-	-- solidity
-	lspconfig.solidity_ls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		filetypes = { "solidity" },
-		root_dir = lspconfig.util.root_pattern("hardhat.config.*", ".git"),
-	})
-
 	-- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
 	lspconfig.emmet_ls.setup({
 		capabilities = capabilities,
@@ -128,6 +123,11 @@ local config = function()
 		},
 	})
 
+	for type, icon in pairs(diagnostic_signs) do
+		local hl = "DiagnosticSign" .. type
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+	end
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
@@ -141,31 +141,6 @@ local config = function()
 	local solhint = require("efmls-configs.linters.solhint")
 	local cpplint = require("efmls-configs.linters.cpplint")
 	local clangformat = require("efmls-configs.formatters.clang_format")
-	local fs = require("efmls-configs.fs")
-	local sol_prettier = {
-		formatCanRange = true,
-		command = string.format(
-			"%s --stdin --stdin-filepath '${INPUT}' ${--range-start:charStart} "
-				.. "--write --plugin=prettier-plugin-solidity"
-				.. "${--range-end:charEnd} ${--tab-width:tabWidth} ${--use-tabs:!insertSpaces} ",
-			fs.executable("prettier", fs.Scope.NODE)
-		),
-		formatStdin = true,
-		rootMarkers = {
-			".prettierrc",
-			".prettierrc.json",
-			".prettierrc.js",
-			".prettierrc.yml",
-			".prettierrc.yaml",
-			".prettierrc.json5",
-			".prettierrc.mjs",
-			".prettierrc.cjs",
-			".prettierrc.toml",
-			"prettier.config.js",
-			"prettier.config.cjs",
-			"prettier.config.mjs",
-		},
-	}
 
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -212,7 +187,7 @@ local config = function()
 				vue = { eslint, prettier_d },
 				markdown = { prettier_d },
 				docker = { hadolint, prettier_d },
-				solidity = { solhint, sol_prettier },
+				solidity = { solhint, prettier_d },
 				html = { prettier_d },
 				css = { prettier_d },
 				c = { clangformat, cpplint },
