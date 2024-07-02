@@ -3,15 +3,15 @@ local opts = {
 		"efm",
 		"bashls",
 		"tsserver",
-		"solidity",
+		"solidity_ls",
 		"tailwindcss",
 		"pyright",
 		"lua_ls",
 		"emmet_ls",
 		"jsonls",
 		"clangd",
+		"dockerls",
 	},
-
 	automatic_installation = true,
 }
 
