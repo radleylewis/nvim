@@ -17,10 +17,10 @@ local mason_lspconfig = {
 	"williamboman/mason-lspconfig.nvim",
 	opts = {
 		ensure_installed = {
+			"solidity_ls",
 			"efm",
 			"bashls",
 			"tsserver",
-			"solidity_ls",
 			"tailwindcss",
 			"pyright",
 			"lua_ls",
