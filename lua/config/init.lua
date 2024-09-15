@@ -24,7 +24,7 @@ local opts = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "carbonfox" },
+		colorscheme = { "nightfox" },
 	},
 	rtp = {
 		disabled_plugins = {

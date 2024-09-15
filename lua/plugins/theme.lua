@@ -9,7 +9,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local palette = require("nightfox.palette").load("carbonfox")
+			local palette = require("nightfox.palette").load("nightfox")
 			require("nightfox").setup({
 				options = { transparent = true },
 				groups = {
@@ -21,7 +21,7 @@ return {
 					},
 				},
 			})
-			vim.cmd.colorscheme("carbonfox")
+			vim.cmd.colorscheme("nightfox")
 		end,
 	},
 }
