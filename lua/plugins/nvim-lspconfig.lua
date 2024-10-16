@@ -79,7 +79,6 @@ local config = function()
 				indentSize = 2,
 			},
 		},
-		-- root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
 
 	-- bash

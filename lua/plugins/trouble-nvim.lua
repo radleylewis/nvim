@@ -14,6 +14,7 @@ return {
 			other = diagnostic_signs.Info,
 		},
 	},
+  lazy = false,
 	keys = {
 		maplazykey("<leader>xx", function()
 			require("trouble").toggle()
