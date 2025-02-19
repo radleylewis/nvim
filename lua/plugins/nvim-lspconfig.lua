@@ -13,16 +13,16 @@ local config = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "solidity" },
-		root_dir = lspconfig.util.root_pattern("hardhat.config.*", 'foundry.toml', 'remappings.txt', ".git"),
-    settings = {
-      solidity = {
-        includePath = '',
-        remappings = {
-          ["@openzeppelin/"] = "lib/openzeppelin-contracts/",
-          ["account-abstraction/"] = "lib/account-abstraction/"
-        }
-      }
-    }
+		root_dir = lspconfig.util.root_pattern("hardhat.config.*", "foundry.toml", "remappings.txt", ".git"),
+		settings = {
+			solidity = {
+				includePath = "",
+				remappings = {
+					["@openzeppelin/"] = "lib/openzeppelin-contracts/",
+					["account-abstraction/"] = "lib/account-abstraction/",
+				},
+			},
+		},
 	})
 
 	-- lua

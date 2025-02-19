@@ -10,6 +10,11 @@ mapkey("<leader>`", "e #", "n") -- Switch to Other Buffer
 mapkey("<leader>m", "NvimTreeFocus", "n")
 mapkey("<leader>e", "NvimTreeToggle", "n")
 
+-- Fuzzy Finder Navigation
+mapkey("<leader>ff", "FzfLua files", "n")
+mapkey("<leader>fg", "FzfLua grep_project", "n")
+mapkey("<leader>fb", "FzfLua buffers", "n")
+
 -- Pane and Window Navigation
 mapkey("<C-h>", "<C-w>h", "n") -- Navigate Left
 mapkey("<C-j>", "<C-w>j", "n") -- Navigate Down
