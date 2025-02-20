@@ -41,8 +41,12 @@ mapkey("<C-Down>", "resize -2", "n")
 mapkey("<C-Left>", "vertical resize +2", "n")
 mapkey("<C-Right>", "vertical resize -2", "n")
 
--- Show Full File-Path
-mapkey("<leader>pa", "ShowPath", "n") -- Show Full File Path
+-- Copy Full File-Path
+vim.keymap.set("n", "<leader>pa", function()
+	local path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", path)
+	print("path:", path)
+end)
 
 -- Indenting
 vim.keymap.set("v", "<", "<gv", { silent = true, noremap = true })
