@@ -8,6 +8,12 @@ local config = function()
 	local lspconfig = require("lspconfig")
 	local capabilities = cmp_nvim_lsp.default_capabilities()
 
+	-- golang
+	lspconfig.gopls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+
 	-- solidity
 	lspconfig.solidity_ls.setup({
 		capabilities = capabilities,
@@ -136,6 +142,8 @@ local config = function()
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 	end
 
+	local gofumpt = require("efmls-configs.formatters.gofumpt")
+	local go_revive = require("efmls-configs.linters.go_revive")
 	local solhint = require("efmls-configs.linters.solhint")
 	local prettier_d = require("efmls-configs.formatters.prettier_d")
 	local luacheck = require("efmls-configs.linters.luacheck")
@@ -171,6 +179,7 @@ local config = function()
 			"css",
 			"c",
 			"cpp",
+			"go",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -185,12 +194,12 @@ local config = function()
 				solidity = { solhint, prettier_d },
 				lua = { luacheck, stylua },
 				python = { flake8, black },
-				typescript = { eslint, prettier_d },
 				json = { eslint, fixjson },
 				jsonc = { eslint, fixjson },
 				sh = { shellcheck, shfmt },
 				javascript = { eslint, prettier_d },
 				javascriptreact = { eslint, prettier_d },
+				typescript = { eslint, prettier_d },
 				typescriptreact = { eslint, prettier_d },
 				svelte = { eslint, prettier_d },
 				vue = { eslint, prettier_d },
@@ -200,6 +209,7 @@ local config = function()
 				css = { prettier_d },
 				c = { clangformat, cpplint },
 				cpp = { clangformat, cpplint },
+				go = { gofumpt, go_revive },
 			},
 		},
 	})

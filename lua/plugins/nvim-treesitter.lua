@@ -32,6 +32,7 @@ local config = function()
 			"vue",
 			"svelte",
 			"toml",
+			"go",
 		},
 		auto_install = true,
 		highlight = {

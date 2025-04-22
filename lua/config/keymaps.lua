@@ -11,6 +11,7 @@ mapkey("<leader>m", "NvimTreeFocus", "n")
 mapkey("<leader>e", "NvimTreeToggle", "n")
 
 -- Fuzzy Finder Navigation
+mapkey("<leader>ff", "FzfLua files", "n")
 mapkey("<leader>fg", "FzfLua grep_project", "n")
 mapkey("<leader>fb", "FzfLua buffers", "n")
 mapkey("<leader>fg", "FzfLua grep_project", "n")
