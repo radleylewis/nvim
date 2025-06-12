@@ -15,6 +15,8 @@ M.on_attach = function(client, bufnr)
 	mapkey("<leader>d", "Lspsaga show_cursor_diagnostics", "n", opts) -- show diagnostics for cursor
 	mapkey("<leader>pd", "Lspsaga diagnostic_jump_prev", "n", opts) -- jump to prev diagnostic in buffer
 	mapkey("<leader>nd", "Lspsaga diagnostic_jump_next", "n", opts) -- jump to next diagnostic in buffer
+	mapkey("<leader>gi", "Lspsaga finder imp", "n", opts) -- implementation
+
 	mapkey("K", "Lspsaga hover_doc", "n", opts) -- show documentation for what is under cursor
 
 	if client.name == "pyright" then

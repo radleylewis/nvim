@@ -56,7 +56,6 @@ vim.keymap.set("v", ">", ">gv", { silent = true, noremap = true })
 local api = vim.api
 
 -- Comments
-
 if vim.env.TMUX ~= nil then
 	api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
 	api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
