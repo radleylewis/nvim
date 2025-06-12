@@ -15,22 +15,6 @@ local mason = {
 
 local mason_lspconfig = {
 	"williamboman/mason-lspconfig.nvim",
-	opts = {
-		ensure_installed = {
-			"solidity_ls",
-			"efm",
-			"bashls",
-			"ts_ls",
-			"tailwindcss",
-			"pyright",
-			"lua_ls",
-			"emmet_ls",
-			"jsonls",
-			"clangd",
-			"dockerls",
-		},
-		automatic_installation = true,
-	},
 	event = "BufReadPre",
 	dependencies = "williamboman/mason.nvim",
 }
