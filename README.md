@@ -5,9 +5,11 @@ Welcome to my NeoVim config. Use it for inspiration.
 ## plugins
 
 [comment.nvim](https://github.com/numToStr/Comment.nvim) - Commenting  
+[fzf-lua](https://github.com/ibhagwan/fzf-lua) - Fuzzy Finder  
+[vim.fugitive](https://github.com/tpope/vim-fugitive) - Git wrapper for Vim  
+[gitsigns](https://github.com/lewis6991/gitsigns.nvim) - Git status signs  
 [copilot](https://github.com/zbirenbaum/copilot.lua) - Github copilot integration  
 [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager  
-[gitsigns](https://github.com/lewis6991/gitsigns.nvim) - Git status signs  
 [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indentation UI  
 [lspconfig](https://github.com/neovim/nvim-lspconfig) - Language Server Protocol support  
 [lspsaga](https://github.com/glepnir/lspsaga.nvim) - Enhanced LSP support  
@@ -21,7 +23,6 @@ Welcome to my NeoVim config. Use it for inspiration.
 [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - auto-completion support  
 [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) - file tree explorer  
 [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - file icons  
-[telescope](https://github.com/nvim-telescope/telescope.nvim) - fuzzy finder  
 [tmux-navigator](https;//github.com/christoomey/vim-tmux-navigator) - tmux window navigation  
 [trouble](https://github.com/folke/trouble.nvim) - diagnostics  
 [vim-illuminate](https://github.com/RRethy/vim-illuminate) - illuminates instances of word under cursor  
