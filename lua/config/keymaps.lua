@@ -1,65 +1,55 @@
-local mapkey = require("util.keymapper").mapvimkey
+-- Center screen when jumping
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
 
--- Buffer Navigation
-mapkey("<leader>bn", "bnext", "n") -- Next buffer
-mapkey("<leader>bp", "bprevious", "n") -- Prev buffer
-mapkey("<leader>bb", "e #", "n") -- Switch to Other Buffer
-mapkey("<leader>`", "e #", "n") -- Switch to Other Buffer
+-- Delete without yanking
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
+vim.keymap.set("v", "p", '"_dP', { desc = "Paste without yanking" })
 
--- Directory Navigatio}n
-mapkey("<leader>m", "NvimTreeFocus", "n")
-mapkey("<leader>e", "NvimTreeToggle", "n")
+-- Buffer navigation
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
 
--- Fuzzy Finder Navigation
-mapkey("<leader>ff", "FzfLua files", "n")
-mapkey("<leader>fg", "FzfLua grep_project", "n")
-mapkey("<leader>fb", "FzfLua buffers", "n")
-mapkey("<leader>fg", "FzfLua grep_project", "n")
-mapkey("<leader>fx", "FzfLua diagnostics_document", "n")
-mapkey("<leader>fX", "FzfLua diagnostics_workspace", "n")
-mapkey("<leader>fc", "FzfLua git_bcommits", "n")
-mapkey("<leader>fl", "FzfLua lsp_references", "n")
+-- Better window navigation
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left window" })
+vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to bottom window" })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to top window" })
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window" })
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("n", "<C-h>", "TmuxNavigateLeft", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-j>", "TmuxNavigateDown", { desc = "Move to bottom window" })
+vim.keymap.set("n", "<C-k>", "TmuxNavigateUp", { desc = "Move to top window" })
+vim.keymap.set("n", "<C-l>", "TmuxNavigateRight", { desc = "Move to right window" })
 
--- Pane and Window Navigation
-mapkey("<C-h>", "<C-w>h", "n") -- Navigate Left
-mapkey("<C-j>", "<C-w>j", "n") -- Navigate Down
-mapkey("<C-k>", "<C-w>k", "n") -- Navigate Up
-mapkey("<C-l>", "<C-w>l", "n") -- Navigate Right
-mapkey("<C-h>", "wincmd h", "t") -- Navigate Left
-mapkey("<C-j>", "wincmd j", "t") -- Navigate Down
-mapkey("<C-k>", "wincmd k", "t") -- Navigate Up
-mapkey("<C-l>", "wincmd l", "t") -- Navigate Right
-mapkey("<C-h>", "TmuxNavigateLeft", "n") -- Navigate Left
-mapkey("<C-j>", "TmuxNavigateDown", "n") -- Navigate Down
-mapkey("<C-k>", "TmuxNavigateUp", "n") -- Navigate Up
-mapkey("<C-l>", "TmuxNavigateRight", "n") -- Navigate Right
+-- Splitting & Resizing
+vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
--- Window Management
-mapkey("<leader>sv", "vsplit", "n") -- Split Vertically
-mapkey("<leader>sh", "split", "n") -- Split Horizontally
-mapkey("<C-Up>", "resize +2", "n")
-mapkey("<C-Down>", "resize -2", "n")
-mapkey("<C-Left>", "vertical resize +2", "n")
-mapkey("<C-Right>", "vertical resize -2", "n")
+-- Move lines up/down
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
--- Copy Full File-Path
-vim.keymap.set("n", "<leader>pa", function()
-	local path = vim.fn.expand("%:p")
-	vim.fn.setreg("+", path)
-	print("path:", path)
-end)
+-- Better indenting in visual mode
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
--- Indenting
-vim.keymap.set("v", "<", "<gv", { silent = true, noremap = true })
-vim.keymap.set("v", ">", ">gv", { silent = true, noremap = true })
+-- Better J behavior
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
 
-local api = vim.api
+-- Quick config editing
+vim.keymap.set("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Edit config" })
 
--- Comments
-if vim.env.TMUX ~= nil then
-	api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
-	api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
-else
-	api.nvim_set_keymap("n", "<C-/>", "gtc", { noremap = false })
-	api.nvim_set_keymap("v", "<C-/>", "goc", { noremap = false })
-end
+-- Normal mode mappings
+vim.keymap.set("n", "<leader>c", ":nohlsearch<CR>", { desc = "Clear search highlights" })
