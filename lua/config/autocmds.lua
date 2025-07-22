@@ -1,3 +1,8 @@
+-- ================================================================================================
+-- title : NeoVim Auto-Commands
+-- author: Radley E. Sidwell-lewis
+-- ================================================================================================
+
 -- Restore last cursor position when reopening a file
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
