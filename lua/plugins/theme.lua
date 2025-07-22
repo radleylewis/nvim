@@ -1,9 +1,8 @@
--- Tokyonight Colourscheme
--- Link: https://dotfyle.com/plugins/folke/tokyonight.nvim
-
 return {
-  "folke/tokyonight.nvim",
+  "savq/melange-nvim",
   lazy = false,
   priority = 1000,
-  opts = {},
+  config = function()
+      vim.cmd("colorscheme melange")
+  end
 }

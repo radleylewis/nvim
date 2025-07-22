@@ -7,7 +7,7 @@
 vim.opt.number = true                              -- Line numbers
 vim.opt.relativenumber = true                      -- Relative line numbers
 vim.opt.cursorline = true                          -- Highlight current line
-vim.opt.scrolloff = 10                             -- Keep 10 lines above/below cursor 
+vim.opt.scrolloff = 10                             -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8                          -- Keep 8 columns left/right of cursor
 vim.opt.wrap = false                               -- Don't wrap lines
 vim.opt.cmdheight = 1                              -- Command line height
@@ -87,7 +87,7 @@ vim.opt.wildmode = "longest:full,full"             -- Completion mode for comman
 vim.opt.wildignorecase = true                      -- Case-insensitive tab completion in commands
 
 -- Cursor Settings
-vim.opt.guicursor =                                  
+vim.opt.guicursor =
   "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50," ..
   "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor," ..
   "sm:block-blinkwait175-blinkoff150-blinkon175"   -- Custom blinking cursors per mode

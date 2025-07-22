@@ -38,7 +38,7 @@ local function FloatingTerminal()
     row = row,
     col = col,
     style = 'minimal',
-    -- border = 'rounded',
+    border = 'rounded',
   })
 
   -- Set transparency for the floating window
@@ -108,4 +108,3 @@ vim.keymap.set("t", "<Esc>", function()
     terminal_state.is_open = false
   end
 end, { noremap = true, silent = true, desc = "Close floating terminal from terminal mode" })
-

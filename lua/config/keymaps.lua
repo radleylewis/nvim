@@ -1,3 +1,12 @@
+-- ================================================================================================
+-- title : NeoVim Keymaps
+-- author: Radley E. Sidwell-lewis
+-- ================================================================================================
+
+-- File Explorer
+vim.keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", { desc = "Focus on File Explorer" })
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle File Explorer" })
+
 -- Center screen when jumping
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
@@ -17,15 +26,15 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
-vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left window" })
-vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to bottom window" })
-vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to top window" })
-vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window" })
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-vim.keymap.set("n", "<C-h>", "TmuxNavigateLeft", { desc = "Move to left window" })
-vim.keymap.set("n", "<C-j>", "TmuxNavigateDown", { desc = "Move to bottom window" })
-vim.keymap.set("n", "<C-k>", "TmuxNavigateUp", { desc = "Move to top window" })
-vim.keymap.set("n", "<C-l>", "TmuxNavigateRight", { desc = "Move to right window" })
+-- vim.keymap.set("n", "<C-h>", "TmuxNavigateLeft", { desc = "Move to left window" })
+-- vim.keymap.set("n", "<C-j>", "TmuxNavigateDown", { desc = "Move to bottom window" })
+-- vim.keymap.set("n", "<C-k>", "TmuxNavigateUp", { desc = "Move to top window" })
+-- vim.keymap.set("n", "<C-l>", "TmuxNavigateRight", { desc = "Move to right window" })
+-- vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left window" })
+-- vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to bottom window" })
+-- vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to top window" })
+-- vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window" })
+-- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Splitting & Resizing
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })

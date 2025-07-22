@@ -27,19 +27,20 @@ vim.g.maplocalleader = " "
 require("config.options")
 require("config.keymaps")
 require("config.autocmds")
-require("config.terminal")
+require("config.terminal") -- TODO: tmux popups
 
 local plugins_directory = 'plugins'
 
--- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    -- import your plugins
     { import = plugins_directory },
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
+	rtp = {
+		disabled_plugins = {
+			"netrw",
+			"netrwPlugin",
+		},
+	},
   install = { colorscheme = { "melange" } },
-  -- automatically check for plugin updates
   checker = { enabled = true },
 })
