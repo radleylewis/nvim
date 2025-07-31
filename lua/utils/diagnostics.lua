@@ -7,5 +7,9 @@ local diagnostic_signs = {
 
 for type, icon in pairs(diagnostic_signs) do
   local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+  vim.api.nvim_call_function("sign_define", {
+    hl,
+    { text = icon, texthl = hl, numhl = "" }
+  })
 end
+

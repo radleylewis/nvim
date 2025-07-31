@@ -1,5 +1,6 @@
 return {
   "glepnir/lspsaga.nvim",
+  lazy = false,
   opts = {
     -- keybinds for navigation in lspsaga window
     move_in_saga = {

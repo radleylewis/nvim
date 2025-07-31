@@ -1,4 +1,4 @@
---- Configures the lua_ls (Lua Language Server)
+--- Configures the gopls (Golang Language Server)
 --- Sets up proper diagnostics, workspace library paths, and LSP capabilities
 ---
 --- This configuration is specifically tailored for Neovim Lua development, providing:
@@ -11,24 +11,9 @@
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil This function doesn't return a value, it configures the LSP server
 return function(lspconfig, capabilities, on_attach)
-	lspconfig.lua_ls.setup({
+	lspconfig.gopls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		settings = {
-			Lua = {
-				diagnostics = {
-					-- Recognize 'vim' as a global variable to prevent undefined warnings
-					globals = { "vim" },
-				},
-				workspace = {
-					library = {
-						-- Add Neovim runtime Lua files for completion and diagnostics
-						vim.fn.expand("$VIMRUNTIME/lua"),
-						-- Add user's Neovim configuration Lua files
-						vim.fn.expand("$XDG_CONFIG_HOME") .. "/nvim/lua",
-					},
-				},
-			},
-		},
+		filetypes = { "go" },
 	})
 end
