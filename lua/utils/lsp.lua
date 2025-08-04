@@ -22,19 +22,22 @@ M.on_attach = function(client, bufnr)
 	keymap("n", "<leader>gi", ":Lspsaga finder imp<CR>", opts)
 	keymap("n", "K", ":Lspsaga hover_doc<CR>", opts)
 
+	-- Order Imports (if supported by the client (i.e. LSP))
 	if client.supports_method("textDocument/codeAction") then
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			buffer = bufnr,
-			callback = function()
-				vim.lsp.buf.code_action({
-					context = {
-						only = { "source.organizeImports" },
-						diagnostics = {},
-					},
-					bufnr = bufnr,
-				})
-			end,
-		})
+		keymap("n", "<leader>oi", function()
+			vim.lsp.buf.code_action({
+				context = {
+					only = { "source.organizeImports" },
+					diagnostics = {},
+				},
+				apply = true,
+				bufnr = bufnr,
+			})
+			-- format after changing import order
+			vim.defer_fn(function()
+				vim.lsp.buf.format({ bufnr = bufnr })
+			end, 100) -- slight delay to allow for the import order to go first
+		end, opts)
 	end
 end
 
