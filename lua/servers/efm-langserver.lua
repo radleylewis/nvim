@@ -1,11 +1,6 @@
 --- Configures the efm-langserver (efm Language Server)
 --- Sets up proper diagnostics, workspace library paths, and LSP capabilities
 ---
---- This configuration is specifically tailored for Neovim Lua development, providing:
---- - Recognition of the global 'vim' variable to prevent diagnostic warnings
---- - Workspace library paths for Neovim runtime and user configuration files
---- - Integration with nvim-lspconfig for consistent LSP behavior
----
 --- @param lspconfig table The lspconfig module from nvim-lspconfig plugin
 --- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
@@ -31,25 +26,25 @@ return function(lspconfig, capabilities, on_attach)
 		on_attach = on_attach,
 		capabilities = capabilities,
 		filetypes = {
-			"solidity",
-			"lua",
-			"python",
-			"json",
-			"jsonc",
-			"sh",
-			"javascript",
-			"javascriptreact",
-			"typescript",
-			"typescriptreact",
-			"svelte",
-			"vue",
-			"markdown",
-			"docker",
-			"html",
-			"css",
 			"c",
 			"cpp",
+			"css",
+			"docker",
 			"go",
+			"html",
+			"javascript",
+			"javascriptreact",
+			"json",
+			"jsonc",
+			"lua",
+			"markdown",
+			"python",
+			"sh",
+			"solidity",
+			"svelte",
+			"typescript",
+			"typescriptreact",
+			"vue",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -61,25 +56,25 @@ return function(lspconfig, capabilities, on_attach)
 		},
 		settings = {
 			languages = {
-				solidity = { solhint, prettier_d },
-				lua = { luacheck, stylua },
-				python = { flake8, black },
-				json = { eslint, fixjson },
-				jsonc = { eslint, fixjson },
-				sh = { shellcheck, shfmt },
-				javascript = { eslint, prettier_d },
-				javascriptreact = { eslint, prettier_d },
-				typescript = { eslint, prettier_d },
-				typescriptreact = { eslint, prettier_d },
-				svelte = { eslint, prettier_d },
-				vue = { eslint, prettier_d },
-				markdown = { prettier_d },
-				docker = { hadolint, prettier_d },
-				html = { prettier_d },
-				css = { prettier_d },
 				c = { clangformat, cpplint },
 				cpp = { clangformat, cpplint },
+				css = { prettier_d },
+				docker = { hadolint, prettier_d },
 				go = { gofumpt, go_revive },
+				html = { prettier_d },
+				javascript = { eslint, prettier_d },
+				javascriptreact = { eslint, prettier_d },
+				json = { eslint, fixjson },
+				jsonc = { eslint, fixjson },
+				lua = { luacheck, stylua },
+				markdown = { prettier_d },
+				python = { flake8, black },
+				sh = { shellcheck, shfmt },
+				solidity = { solhint, prettier_d },
+				svelte = { eslint, prettier_d },
+				typescript = { eslint, prettier_d },
+				typescriptreact = { eslint, prettier_d },
+				vue = { eslint, prettier_d },
 			},
 		},
 	})
