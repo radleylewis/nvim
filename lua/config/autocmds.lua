@@ -1,6 +1,6 @@
 -- ================================================================================================
--- title : NeoVim Auto-Commands
--- author: Radley E. Sidwell-lewis
+-- TITLE : auto-commands
+-- ABOUT : automatically run code on certain events (e.g. save, yank)
 -- ================================================================================================
 
 -- Restore last cursor position when reopening a file
