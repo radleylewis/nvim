@@ -1,6 +1,6 @@
 -- ================================================================================================
--- title : NeoVim Options
--- author: Radley E. Sidwell-lewis
+-- TITLE : NeoVim options
+-- ABOUT : basic settings native to neovim
 -- ================================================================================================
 
 -- Basic Settings
