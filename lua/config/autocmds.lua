@@ -1,6 +1,6 @@
 -- ================================================================================================
 -- TITLE : auto-commands
--- ABOUT : automatically run code on certain events (e.g. save, yank)
+-- ABOUT : automatically run code on defined events (e.g. save, yank)
 -- ================================================================================================
 
 -- Restore last cursor position when reopening a file

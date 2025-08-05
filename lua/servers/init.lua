@@ -1,8 +1,13 @@
-require("utils.diagnostics")
-
 local on_attach = require("utils.lsp").on_attach
+local diagnostic_signs = require("utils.icons").diagnostic_signs
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+-- define diagnostic sign icons
+for type, icon in pairs(diagnostic_signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
 -- Language Server Protocol (LSP)
 require("servers.lua_ls")(lspconfig, capabilities, on_attach)

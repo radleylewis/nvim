@@ -11,9 +11,9 @@
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil This function doesn't return a value, it configures the LSP server
 return function(lspconfig, capabilities, on_attach)
-	lspconfig.gopls.setup({
+	lspconfig.jsonls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		filetypes = { "json" },
+		filetypes = { "json", "jsonc" },
 	})
 end
