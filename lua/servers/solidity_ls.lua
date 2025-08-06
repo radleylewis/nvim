@@ -9,16 +9,16 @@ return function(lspconfig, capabilities, on_attach)
 	lspconfig.solidity_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		filetypes = {
-			"typescript",
-			"javascript",
-			"javascriptreact",
-			"typescriptreact",
-			"css",
-			"sass",
-			"scss",
-			"svelte",
-			"vue",
+		filetypes = { "solidity" },
+		root_dir = lspconfig.util.root_pattern("hardhat.config.*", "foundry.toml", "remappings.txt", ".git"),
+		settings = {
+			solidity = {
+				includePath = "",
+				remappings = {
+					["@openzeppelin/"] = "lib/openzeppelin-contracts/",
+					["account-abstraction/"] = "lib/account-abstraction/",
+				},
+			},
 		},
 	})
 end
