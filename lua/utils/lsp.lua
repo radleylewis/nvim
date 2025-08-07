@@ -8,19 +8,24 @@ M.on_attach = function(client, bufnr)
 		buffer = bufnr,
 	}
 
-	-- Lspsaga
-	keymap("n", "<leader>fd", "<cmd>Lspsaga finder<CR>", opts)
-	keymap("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts)
-	keymap("n", "<leader>gD", "<cmd>Lspsaga goto_definition<CR>", opts)
-	keymap("n", "<leader>gS", "<cmd>vsplit<CR><cmd>Lspsaga goto_definition<CR>", opts)
-	keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-	keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
-	keymap("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-	keymap("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
-	keymap("n", "<leader>pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-	keymap("n", "<leader>nd", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-	keymap("n", "<leader>gi", "<cmd>Lspsaga finder imp<CR>", opts)
-	keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+	-- fzf-lua keymaps
+	keymap("n", "<leader>gd", "<cmd>FzfLua lsp_finder<CR>", opts) -- LSP Finder (definition + references)
+	keymap("n", "<leader>gr", "<cmd>FzfLua lsp_references<CR>", opts) -- Show all references to the symbol under the cursor
+	keymap("n", "<leader>gt", "<cmd>FzfLua lsp_typedefs<CR>", opts) -- Jump to the type definition of the symbol under the cursor
+	keymap("n", "<leader>ds", "<cmd>FzfLua lsp_document_symbols<CR>", opts) -- List all symbols (functions, classes, etc.) in the current file
+	keymap("n", "<leader>ws", "<cmd>FzfLua lsp_workspace_symbols<CR>", opts) -- Search for any symbol across the entire project/workspace
+	keymap("n", "<leader>gi", "<cmd>FzfLua lsp_implementations<CR>", opts) -- Go to implementation
+
+	-- native neovim keymaps
+	keymap("n", "<leader>gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- goto definition
+	keymap("n", "<leader>gS", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts) -- goto definition in split
+	keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts) -- Code actions
+	keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts) -- Rename symbol
+	keymap("n", "<leader>D", "<cmd>lua vim.diagnostic.open_float({ scope = 'line' })<CR>", opts) -- Line diagnostics (float)
+	keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts) -- Cursor diagnostics
+	keymap("n", "<leader>pd", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts) -- previous diagnostic
+	keymap("n", "<leader>nd", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts) -- next diagnostic
+	keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- hover documentation
 
 	-- Order Imports (if supported by the client LSP)
 	if client.supports_method("textDocument/codeAction") then
