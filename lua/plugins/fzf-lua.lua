@@ -59,5 +59,6 @@ return {
 			desc = "FZF Workspace Symbols",
 		},
 	},
+
 	opts = {},
 }
