@@ -1,5 +1,13 @@
+-- ================================================================================================
+-- TITLE : fzf-lua
+-- LINKS :
+--   > github : https://github.com/ibhagwan/fzf-lua
+-- ABOUT : lua-based fzf wrapper and integration.
+-- ================================================================================================
+
 return {
 	"ibhagwan/fzf-lua",
+	lazy = false,
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
 		{

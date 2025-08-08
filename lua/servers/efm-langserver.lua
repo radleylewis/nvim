@@ -1,9 +1,9 @@
 -- ================================================================================================
 -- TITLE : efm-langserver
+-- ABOUT : a general purpose language server protocol implemented here for linters/formatters
 -- LINKS :
 --   > github : https://github.com/mattn/efm-langserver
 --   > configs: https://github.com/creativenull/efmls-configs-nvim/tree/main
--- ABOUT : a general purpose language server protocol implemented here for linters/formatters
 -- ================================================================================================
 
 --- @param lspconfig table The lspconfig module from nvim-lspconfig plugin

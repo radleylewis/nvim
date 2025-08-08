@@ -1,10 +1,14 @@
---- Configures emmet_ls (TS/JS, css, sass, scss, svelte, vue Language Server)
---- Sets up proper diagnostics, workspace library paths, and LSP capabilities
----
+-- ================================================================================================
+-- TITLE : emmet_ls (Emmet Language Server) LSP Setup
+-- ABOUT : Configures Emmet Language Server for web-related (e.g. TS/JS, CSS, Sass, Svelte, Vue)
+-- LINKS :
+--   > github: https://github.com/aca/emmet-ls
+-- ================================================================================================
+
 --- @param lspconfig table The lspconfig module from nvim-lspconfig plugin
 --- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
---- @return nil This function doesn't return a value, it configures the LSP server
+--- @return nil
 return function(lspconfig, capabilities, on_attach)
 	lspconfig.emmet_ls.setup({
 		capabilities = capabilities,

@@ -1,6 +1,9 @@
---- Configures pyright (Python Language Server)
---- Sets up proper diagnostics, workspace library paths, and LSP capabilities
----
+-- ================================================================================================
+-- TITLE : pyright (Python Language Server) LSP Setup
+-- LINKS :
+--   > github: https://github.com/microsoft/pyright
+-- ================================================================================================
+
 --- @param lspconfig table The lspconfig module from nvim-lspconfig plugin
 --- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer

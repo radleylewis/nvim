@@ -1,13 +1,27 @@
+-- ================================================================================================
+-- TITLE : nvim-cmp
+-- ABOUT : A completion plugin written in lua.
+-- LINKS :
+--   > github             : https://github.com/hrsh7th/nvim-cmp
+--   > lspkind (dep)      : https://github.com/onsails/lspkind.nvim
+--   > cmp_luasnip (dep)  : https://github.com/saadparwaiz1/cmp_luasnip
+--   > luasnip (dep)      : https://github.com/L3MON4D3/LuaSnip
+--   > friendly-snippets  : https://github.com/rafamadriz/friendly-snippets
+--   > cmp-nvim-lsp (dep) : https://github.com/hrsh7th/cmp-nvim-lsp
+--   > cmp-buffer (dep)   : https://github.com/hrsh7th/cmp-buffer
+--   > cmp-path (dep)     : https://github.com/hrsh7th/cmp-path
+-- ================================================================================================
+
 return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
-		"onsails/lspkind.nvim", -- icons in completion menu
-		"saadparwaiz1/cmp_luasnip", -- completion source for snippets
-		"L3MON4D3/LuaSnip", -- snippet engine
-		"rafamadriz/friendly-snippets", -- community snippets
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
+		"onsails/lspkind.nvim", -- Adds VS Code-like pictograms/icons to the completion menu
+		"saadparwaiz1/cmp_luasnip", -- Enables LuaSnip as a source for nvim-cmp autocompletion
+		"L3MON4D3/LuaSnip", -- Snippet engine for Neovim (write and expand code snippets)
+		"rafamadriz/friendly-snippets", -- Large collection of pre-made snippets for various languages
+		"hrsh7th/cmp-nvim-lsp", -- nvim-cmp source for LSP-based autocompletion
+		"hrsh7th/cmp-buffer", -- nvim-cmp source for words from the current buffer
+		"hrsh7th/cmp-path", -- nvim-cmp source for filesystem paths
 	},
 	config = function()
 		local lspkind = require("lspkind")
@@ -24,19 +38,17 @@ return {
 			},
 
 			formatting = {
-				format = function(entry, vim_item)
-					if lspkind.presets.default[vim_item.kind] then
-						vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
-					end
-					vim_item.menu = ({
+				format = lspkind.cmp_format({
+					before = require("tailwind-tools.cmp").lspkind_format,
+					mode = "symbol_text",
+					menu = {
 						codeium = "",
 						luasnip = "",
 						buffer = "",
 						path = "",
 						nvim_lsp = "🅻",
-					})[entry.source.name]
-					return vim_item
-				end,
+					},
+				}),
 			},
 
 			mapping = cmp.mapping.preset.insert({

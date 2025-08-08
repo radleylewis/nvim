@@ -1,3 +1,10 @@
+-- ================================================================================================
+-- TITLE : codeium/windsurf
+-- LINKS :
+--   > github : https://github.com/Exafunction/windsurf.nvim
+-- ABOUT : Native Windsurf plugin for Neovim.
+-- ================================================================================================
+
 return {
 	"Exafunction/windsurf.nvim",
 	dependencies = {
