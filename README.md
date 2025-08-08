@@ -1,4 +1,4 @@
 # TODO:
 
+- solidity
 - debuggers
-- tmux

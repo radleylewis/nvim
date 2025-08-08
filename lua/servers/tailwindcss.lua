@@ -9,9 +9,16 @@
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
 return function(lspconfig, capabilities, on_attach)
-	lspconfig.yamlls.setup({
+	lspconfig.tailwindcss.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"vue",
+			"svelte",
+		},
 	})
 end
