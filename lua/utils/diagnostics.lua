@@ -16,9 +16,6 @@ M.setup = function()
 				[vim.diagnostic.severity.INFO] = diagnostic_signs.Info,
 				[vim.diagnostic.severity.HINT] = diagnostic_signs.Hint,
 			},
-			linehl = {
-				[vim.diagnostic.severity.ERROR] = "DiagnosticError",
-			},
 		},
 	})
 end

@@ -43,6 +43,9 @@ M.on_attach = function(client, bufnr)
 				vim.lsp.buf.format({ bufnr = bufnr })
 			end, 50) -- slight delay to allow for the import order to go first
 		end, opts)
+	else
+		local message = "Organise imports not supported for client"
+		vim.notify(message, vim.log.levels.WARN, { bufnr = bufnr })
 	end
 end
 
