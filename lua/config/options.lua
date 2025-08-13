@@ -11,9 +11,7 @@ vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
 vim.opt.wrap = false -- Don't wrap lines
 vim.opt.cmdheight = 1 -- Command line height
-vim.opt.spelllang = { "en" } -- Set language for spellchecking
-vim.opt.formatoptions:remove({ "c", "r", "o" }) -- Don't auto comment new lines
-vim.opt.ttyfast = true -- Fast terminal connection
+vim.opt.spelllang = { "en", "de" } -- Set language for spellchecking
 
 -- Tabbing / Indentation
 vim.opt.tabstop = 2 -- Tab width
@@ -44,7 +42,7 @@ vim.opt.pumblend = 10 -- Popup menu transparency
 vim.opt.winblend = 0 -- Floating window transparency
 vim.opt.conceallevel = 0 -- Don't hide markup
 vim.opt.concealcursor = "" -- Show markup even on cursor line
-vim.opt.lazyredraw = true -- Don't redraw while executing macros
+vim.opt.lazyredraw = false -- redraw while executing macros (butter UX)
 vim.opt.redrawtime = 10000 -- Timeout for syntax highlighting redraw
 vim.opt.maxmempattern = 20000 -- Max memory for pattern matching
 vim.opt.synmaxcol = 300 -- Syntax highlighting column limit
@@ -87,15 +85,19 @@ vim.opt.wildmode = "longest:full,full" -- Completion mode for command-line
 vim.opt.wildignorecase = true -- Case-insensitive tab completion in commands
 
 -- Cursor Settings
-vim.opt.guicursor =
-	"n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+vim.opt.guicursor = {
+	"n-v-c:block", -- Normal, Visual, Command-line
+	"i-ci-ve:block", -- Insert, Command-line Insert, Visual-exclusive
+	"r-cr:hor20", -- Replace, Command-line Replace
+	"o:hor50", -- Operator-pending
+	"a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor", -- All modes: blinking & highlight groups
+	"sm:block-blinkwait175-blinkoff150-blinkon175", -- Showmatch mode
+}
 
 -- Folding Settings
 vim.opt.foldmethod = "expr" -- Use expression for folding
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Use treesitter for folding
 vim.opt.foldlevel = 99 -- Keep all folds open by default
-vim.opt.viewoptions:remove("curdir") -- Avoid saving current dir in view
-vim.opt.viewoptions:append("folds") -- Save/restore folds per file
 
 -- Split Behavior
 vim.opt.splitbelow = true -- Horizontal splits open below
