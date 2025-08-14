@@ -29,8 +29,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- format on save
-local lsp_fmt_group = vim.api.nvim_create_augroup("HighlightYankGroup", {})
+-- format on save using efm langserver and configured formatters
+local lsp_fmt_group = vim.api.nvim_create_augroup("FormatOnSaveGroup", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
 	group = lsp_fmt_group,
 	callback = function()

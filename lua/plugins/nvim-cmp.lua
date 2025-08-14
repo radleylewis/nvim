@@ -2,14 +2,15 @@
 -- TITLE : nvim-cmp
 -- ABOUT : A completion plugin written in lua.
 -- LINKS :
---   > github             : https://github.com/hrsh7th/nvim-cmp
---   > lspkind (dep)      : https://github.com/onsails/lspkind.nvim
---   > cmp_luasnip (dep)  : https://github.com/saadparwaiz1/cmp_luasnip
---   > luasnip (dep)      : https://github.com/L3MON4D3/LuaSnip
---   > friendly-snippets  : https://github.com/rafamadriz/friendly-snippets
---   > cmp-nvim-lsp (dep) : https://github.com/hrsh7th/cmp-nvim-lsp
---   > cmp-buffer (dep)   : https://github.com/hrsh7th/cmp-buffer
---   > cmp-path (dep)     : https://github.com/hrsh7th/cmp-path
+--   > github                             : https://github.com/hrsh7th/nvim-cmp
+--   > lspkind (dep)                      : https://github.com/onsails/lspkind.nvim
+--   > cmp_luasnip (dep)                  : https://github.com/saadparwaiz1/cmp_luasnip
+--   > luasnip (dep)                      : https://github.com/L3MON4D3/LuaSnip
+--   > friendly-snippets (dep)            : https://github.com/rafamadriz/friendly-snippets
+--   > cmp-nvim-lsp (dep)                 : https://github.com/hrsh7th/cmp-nvim-lsp
+--   > cmp-buffer (dep)                   : https://github.com/hrsh7th/cmp-buffer
+--   > cmp-path (dep)                     : https://github.com/hrsh7th/cmp-path
+--   > cmp-nvim-lsp-signature-help (dep)  : https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
 -- ================================================================================================
 
 return {
@@ -22,6 +23,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp", -- nvim-cmp source for LSP-based autocompletion
 		"hrsh7th/cmp-buffer", -- nvim-cmp source for words from the current buffer
 		"hrsh7th/cmp-path", -- nvim-cmp source for filesystem paths
+		"hrsh7th/cmp-nvim-lsp-signature-help", -- function signatures
 	},
 	config = function()
 		local lspkind = require("lspkind")
@@ -67,6 +69,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{ name = "nvim_lsp_signature_help" },
 			},
 		})
 	end,
