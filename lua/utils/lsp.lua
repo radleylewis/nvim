@@ -3,7 +3,7 @@ local M = {}
 M.on_attach = function(client, bufnr)
 	local keymap = vim.keymap.set
 	local opts = {
-		noremap = true, -- prevent non-recursive mapping
+		noremap = true, -- prevent recursive mapping
 		silent = true, -- don't print the command to the cli
 		buffer = bufnr, -- restrict the keymap to the local buffer number
 	}
@@ -43,9 +43,6 @@ M.on_attach = function(client, bufnr)
 				vim.lsp.buf.format({ bufnr = bufnr })
 			end, 50) -- slight delay to allow for the import order to go first
 		end, opts)
-	else
-		local message = "Organise imports not supported for client"
-		vim.notify(message, vim.log.levels.WARN, { bufnr = bufnr })
 	end
 end
 
