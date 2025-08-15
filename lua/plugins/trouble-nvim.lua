@@ -1,38 +1,45 @@
-local diagnostic_signs = require("util.icons").diagnostic_signs
-local maplazykey = require("util.keymapper").maplazykey
+-- ================================================================================================
+-- TITLE : trouble.nvim
+-- ABOUT : A pretty diagnostics, references, quickfix and location list viewer for Neovim.
+-- LINKS :
+--   > github : https://github.com/folke/trouble.nvim
+-- ================================================================================================
 
 return {
 	"folke/trouble.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
-	opts = {
-		signs = {
-			-- icons / text used for a diagnostic
-			error = diagnostic_signs.Error,
-			warning = diagnostic_signs.Warn,
-			hint = diagnostic_signs.Hint,
-			information = diagnostic_signs.Info,
-			other = diagnostic_signs.Info,
-		},
-	},
-  lazy = false,
+	opts = {}, -- for default options, refer to the configuration section for custom setup.
+	cmd = "Trouble",
+	lazy = true,
 	keys = {
-		maplazykey("<leader>xx", function()
-			require("trouble").toggle()
-		end, "Toggle Trouble"),
-		maplazykey("<leader>xw", function()
-			require("trouble").toggle("workspace_diagnostics")
-		end, "Show Workspace Diagnostics"),
-		maplazykey("<leader>xd", function()
-			require("trouble").toggle("document_diagnostics")
-		end, "Show Document Diagnostics"),
-		maplazykey("<leader>xq", function()
-			require("trouble").toggle("quickfix")
-		end, "Toggle Quickfix List"),
-		maplazykey("<leader>xl", function()
-			require("trouble").toggle("loclist")
-		end, "Toggle Location List"),
-		maplazykey("gR", function()
-			require("trouble").toggle("lsp_references")
-		end, "Toggle LSP References"),
+		{
+			"<leader>xx",
+			"<cmd>Trouble diagnostics toggle<cr>",
+			desc = "Workspace Diagnostics (Trouble)",
+		},
+		{
+			"<leader>xX",
+			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			desc = "Buffer Diagnostics (Trouble)",
+		},
+		{
+			"<leader>cs",
+			"<cmd>Trouble symbols toggle focus=false<cr>",
+			desc = "Symbols (Trouble)",
+		},
+		{
+			"<leader>cl",
+			"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+			desc = "LSP Definitions / references / ... (Trouble)",
+		},
+		{
+			"<leader>xL",
+			"<cmd>Trouble loclist toggle<cr>",
+			desc = "Location List (Trouble)",
+		},
+		{
+			"<leader>xQ",
+			"<cmd>Trouble qflist toggle<cr>",
+			desc = "Quickfix List (Trouble)",
+		},
 	},
 }

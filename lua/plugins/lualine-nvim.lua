@@ -1,28 +1,21 @@
-local config = function()
-	local palette = require("nightfox.palette").load("carbonfox")
-	local custom_nightfox = require("lualine.themes.nightfox")
-	custom_nightfox.normal.b.bg = palette.bg0
-
-	require("lualine").setup({
-		options = {
-			theme = custom_nightfox,
-			globalstatus = true,
-			component_separators = { left = "|", right = "|" },
-			section_separators = { left = "", right = "" },
-		},
-		sections = {
-			lualine_a = { "mode" },
-			lualine_b = { "buffers" },
-			lualine_x = { "encoding", "fileformat", "filetype", "progress" },
-			lualine_y = { "" },
-			lualine_z = { "location" },
-		},
-		tabline = {},
-	})
-end
+-- ================================================================================================
+-- TITLE : lualine.nvim
+-- LINKS :
+--   > github : https://github.com/nvim-lualine/lualine.nvim
+-- ABOUT : A blazing fast and easy to configure Neovim statusline written in Lua.
+-- ================================================================================================
 
 return {
 	"nvim-lualine/lualine.nvim",
-	lazy = false,
-	config = config,
+	config = function()
+		require("lualine").setup({
+			options = {
+				theme = "melange",
+				icons_enabled = true,
+				section_separators = { left = "", right = "" },
+				component_separators = "|",
+			},
+		})
+	end,
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 }

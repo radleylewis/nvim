@@ -1,11 +1,10 @@
 -- ================================================================================================
--- TITLE : gitsigns.nvim
+-- TITLE : vim-tmux-navigator
+-- ABOUT : Seamless navigation between Vim splits and tmux panes using the same shortcuts.
 -- LINKS :
---   > github : https://github.com/lewis6991/gitsigns.nvim
--- ABOUT : deep buffer integration for git.
+--   > github : https://github.com/christoomey/vim-tmux-navigator
 -- ================================================================================================
 
 return {
-	"lewis6991/gitsigns.nvim",
-	opts = {},
+	"christoomey/vim-tmux-navigator",
 }
