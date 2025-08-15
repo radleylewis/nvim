@@ -1,4 +1,1 @@
-# TODO:
-
-- solidity
-- debuggers
+# NeoVim 2025
