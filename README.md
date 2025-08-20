@@ -22,4 +22,3 @@ Please feel free to assist others in the issues tab!
 ## License
 
 This config is released under GPLv3.
-
