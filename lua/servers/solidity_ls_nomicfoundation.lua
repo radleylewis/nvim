@@ -1,7 +1,7 @@
 -- ================================================================================================
--- TITLE : solidity_ls (Solidity Language Server) LSP Setup
+-- TITLE : solidity_ls_nomicfoundation (Solidity Language Server) LSP Setup
 -- LINKS :
---   > github: https://github.com/juanfranblanco/vscode-solidity
+--   > github: https://github.com/NomicFoundation/hardhat-vscode
 -- ================================================================================================
 
 --- @param lspconfig table The lspconfig module from nvim-lspconfig plugin
@@ -9,19 +9,12 @@
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
 return function(lspconfig, capabilities, on_attach)
-	lspconfig.solidity_ls.setup({
+	lspconfig.solidity.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
+		single_file_support = true,
+		cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
 		filetypes = { "solidity" },
-		root_dir = lspconfig.util.root_pattern("hardhat.config.*", "foundry.toml", "remappings.txt", ".git"),
-		settings = {
-			solidity = {
-				includePath = "",
-				remappings = {
-					["@openzeppelin/"] = "lib/openzeppelin-contracts/",
-					["account-abstraction/"] = "lib/account-abstraction/",
-				},
-			},
-		},
+		root_dir = lspconfig.util.find_git_ancestor,
 	})
 end

@@ -11,10 +11,10 @@ require("servers.ts_ls")(lspconfig, capabilities, on_attach)
 require("servers.bashls")(lspconfig, capabilities, on_attach)
 require("servers.clangd")(lspconfig, capabilities, on_attach)
 require("servers.dockerls")(lspconfig, capabilities, on_attach)
-require("servers.solidity_ls")(lspconfig, capabilities, on_attach)
 require("servers.emmet_ls")(lspconfig, capabilities, on_attach)
 require("servers.yamlls")(lspconfig, capabilities, on_attach)
 require("servers.tailwindcss")(lspconfig, capabilities, on_attach)
+require("servers.solidity_ls_nomicfoundation")(lspconfig, capabilities, on_attach)
 
 -- Linters & Formatters
 require("servers.efm-langserver")(lspconfig, capabilities, on_attach)
