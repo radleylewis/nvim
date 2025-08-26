@@ -1,8 +1,9 @@
-# The Ultimate NeoVim Setup Guide
+# NeoVim for Web Development & Software Development Setup Guide
 
 ## Overview
 
-Thanks for checking out my NeoVim config. For a full walkthrough please checkout the tutorial episodes below.
+Thanks for checking out my NeoVim config. For a full walkthrough please checkout the tutorial episodes below. Supported languages & frameworks:
+`typescript`, `javascript`, `python`, `golang`, `lua`, `bash`, `c`, `c++`, `json`, `yaml`, `docker`, `html`, `css`, `tailwindcss`, `rust`, `solidity`, `vue`, `react`, `svelte`
 
 ## YouTube Tutorial
 
