@@ -44,6 +44,18 @@ M.on_attach = function(client, bufnr)
 			end, 50) -- slight delay to allow for the import order to go first
 		end, opts)
 	end
+
+	-- === DAP keymaps ===
+	if client.name == "rust-analyzer" then -- debugging only configured for Rust
+		print("RUST")
+		local dap = require("dap")
+		keymap("n", "<leader>dc", dap.continue, opts) -- Continue / Start
+		keymap("n", "<leader>do", dap.step_over, opts) -- Step over
+		keymap("n", "<leader>di", dap.step_into, opts) -- Step into
+		keymap("n", "<leader>du", dap.step_out, opts) -- Step out
+		keymap("n", "<leader>db", dap.toggle_breakpoint, opts) -- Toggle breakpoint
+		keymap("n", "<leader>dr", dap.repl.open, opts) -- Open DAP REPL
+	end
 end
 
 return M
