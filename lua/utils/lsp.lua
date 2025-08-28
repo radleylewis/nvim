@@ -47,7 +47,6 @@ M.on_attach = function(client, bufnr)
 
 	-- === DAP keymaps ===
 	if client.name == "rust-analyzer" then -- debugging only configured for Rust
-		print("RUST")
 		local dap = require("dap")
 		keymap("n", "<leader>dc", dap.continue, opts) -- Continue / Start
 		keymap("n", "<leader>do", dap.step_over, opts) -- Step over

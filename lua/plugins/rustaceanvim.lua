@@ -11,7 +11,14 @@ local get_codelldb_adapter = function()
 	local mason_registry = require("mason-registry")
 	if mason_registry.is_installed("codelldb") then
 		local codelldb = mason_registry.get_package("codelldb")
-		local extension_path = codelldb:get_install_path() .. "/extension/"
+		local ok, install_path = pcall(codelldb:get_install_path(), codelldb)
+		local extension_path
+		if ok and install_path then
+			extension_path = install_path .. "/extension/"
+		else
+			print("[error] getting codelldb install path, using fallback...")
+			extension_path = vim.fn.expand("~/.local/share/nvim/mason/packages/codelldb/extension/")
+		end
 		local codelldb_path = extension_path .. "adapter/codelldb"
 		local base_path = extension_path .. "lldb/lib/liblldb"
 		---@diagnostic disable-next-line: undefined-field (os_uname)
