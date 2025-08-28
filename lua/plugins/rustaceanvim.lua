@@ -4,8 +4,8 @@
 -- LINKS :
 --   > github : https://github.com/mrcjkb/rustaceanvim
 -- ================================================================================================
+
 local on_attach = require("utils.lsp").on_attach
--- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local get_codelldb_adapter = function()
 	local mason_registry = require("mason-registry")
@@ -30,7 +30,6 @@ local config = function()
 			},
 		},
 		server = {
-			-- capabilities = capabilities,
 			on_attach = on_attach,
 			settings = {
 				["rust-analyzer"] = {

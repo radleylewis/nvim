@@ -26,7 +26,6 @@ return function(lspconfig, capabilities, on_attach)
 	local cpplint = require("efmls-configs.linters.cpplint") -- c/cpp linter
 	local clangformat = require("efmls-configs.formatters.clang_format") -- c/cpp formatter
 	local solhint = require("efmls-configs.linters.solhint") -- solidity linter
-	local rustfmt = require("efmls-configs.formatters.rustfmt") -- rust formatter
 
 	lspconfig.efm.setup({
 		on_attach = on_attach,
@@ -45,7 +44,6 @@ return function(lspconfig, capabilities, on_attach)
 			"lua",
 			"markdown",
 			"python",
-			"rust",
 			"sh",
 			"solidity",
 			"svelte",
@@ -78,7 +76,6 @@ return function(lspconfig, capabilities, on_attach)
 				python = { flake8, black },
 				sh = { shellcheck, shfmt },
 				solidity = { solhint, prettier_d },
-				rust = { rustfmt },
 				svelte = { eslint_d, prettier_d },
 				typescript = { eslint_d, prettier_d },
 				typescriptreact = { eslint_d, prettier_d },
