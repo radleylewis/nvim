@@ -8,7 +8,7 @@ Thanks for checking out my NeoVim config. For a full walkthrough please checkout
 ## YouTube Tutorial
 
 Part 1: Options, Keymaps & Plugins ([link](https://youtu.be/cdAMq2KcF4w))  
-Part 2: LSP, Linters, Formatters, AI Assistance, Completion ([link](https://youtu.be/qp1OcolI6x0))
+Part 2: LSP, Linters, Formatters, AI Assistance, Completion ([link](https://youtu.be/qp1OcolI6x0))  
 Part 3: TMUX, Git & Debugging ([link](https://youtu.be/JN4Zbs0ypwM))
 
 ## Requires Neovim >= 0.11.3
