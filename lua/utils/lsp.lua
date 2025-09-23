@@ -28,7 +28,7 @@ M.on_attach = function(client, bufnr)
 	keymap("n", "<leader>gi", "<cmd>FzfLua lsp_implementations<CR>", opts) -- Go to implementation
 
 	-- Order Imports (if supported by the client LSP)
-	if client.supports_method("textDocument/codeAction") then
+	if client.supports_method and client.supports_method("textDocument/codeAction") then
 		keymap("n", "<leader>oi", function()
 			vim.lsp.buf.code_action({
 				context = {
