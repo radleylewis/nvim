@@ -40,3 +40,9 @@ vim.keymap.set("n", "<leader>rc", "<Cmd>e ~/.config/nvim/init.lua<CR>", { desc =
 -- File Explorer
 vim.keymap.set("n", "<leader>m", "<Cmd>NvimTreeFocus<CR>", { desc = "Focus on File Explorer" })
 vim.keymap.set("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", { desc = "Toggle File Explorer" })
+
+-- Optional: Keymaps for Lazy (add to your keymaps.lua or here)
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy UI" })
+vim.keymap.set("n", "<leader>ls", "<cmd>Lazy sync<cr>", { desc = "Sync Plugins" })
+vim.keymap.set("n", "<leader>lc", "<cmd>Lazy clean<cr>", { desc = "Clean Unused" })
+vim.keymap.set("n", "<leader>ll", "<cmd>Lazy log<cr>", { desc = "Plugin Logs" })
