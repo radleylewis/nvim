@@ -6,10 +6,11 @@
 -- ================================================================================================
 
 return {
-	"savq/melange-nvim",
+	"catppuccin/nvim",
+  name = "catppuccin",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd("colorscheme melange")
+		vim.cmd("colorscheme catppuccin-macchiato")
 	end,
 }
