@@ -1,16 +1,20 @@
 -- ================================================================================================
--- TITLE : melange-nvim
--- ABOUT : A subtle, warm colorscheme for Neovim inspired by Sublime Text's Melange theme.
+-- TITLE : themer.lua
+-- ABOUT : A subtle, warm colorscheme for Neovim inspired from forost
 -- LINKS :
---   > github : https://github.com/savq/melange-nvim
+--   > github : https://github.com/ribru17/bamboo.nvim
 -- ================================================================================================
 
+
 return {
-	"catppuccin/nvim",
-  name = "catppuccin",
+	"ribru17/bamboo.nvim",
+  name = "bamboo",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd("colorscheme catppuccin-macchiato")
+		require("bamboo").setup({
+        style = 'multiplex'
+    })
+		require("bamboo").load()
 	end,
 }
