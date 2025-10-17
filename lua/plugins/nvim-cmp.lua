@@ -18,7 +18,11 @@ return {
 	dependencies = {
 		"onsails/lspkind.nvim", -- Adds VS Code-like pictograms/icons to the completion menu
 		"saadparwaiz1/cmp_luasnip", -- Enables LuaSnip as a source for nvim-cmp autocompletion
-		"L3MON4D3/LuaSnip", -- Snippet engine for Neovim (write and expand code snippets)
+		{
+			"L3MON4D3/LuaSnip", -- Snippet engine for Neovim (write and expand code snippets)
+			version = "v2.*",
+			build = "make install_jsregexp",
+		},
 		"rafamadriz/friendly-snippets", -- Large collection of pre-made snippets for various languages
 		"hrsh7th/cmp-nvim-lsp", -- nvim-cmp source for LSP-based autocompletion
 		"hrsh7th/cmp-buffer", -- nvim-cmp source for words from the current buffer
@@ -41,7 +45,6 @@ return {
 
 			formatting = {
 				format = lspkind.cmp_format({
-					before = require("tailwind-tools.cmp").lspkind_format,
 					mode = "symbol_text",
 					menu = {
 						codeium = "",
