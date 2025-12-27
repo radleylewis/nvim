@@ -12,6 +12,9 @@ return {
 		"hrsh7th/nvim-cmp",
 	},
 	config = function()
-		require("codeium").setup({})
+		if vim.loop.os_uname().sysname ~= "Linux" then
+			-- NOTE: do not start on linux
+			require("codeium").setup({})
+		end
 	end,
 }
