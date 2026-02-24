@@ -13,6 +13,10 @@ return {
 		opts = {
 			extra_groups = {
 				"NvimTreeNormal",
+				"NvimTreeNormalNC",
+				"NvimTreeSignColumn",
+				"NvimTreeEndOfBuffer",
+				"NvimTreeWinSeparator",
 			},
 		},
 	},
