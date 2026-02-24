@@ -16,4 +16,5 @@ return {
 	{ "echasnovski/mini.trailspace", version = "*", opts = {} },
 	{ "echasnovski/mini.bufremove", version = "*", opts = {} },
 	{ "echasnovski/mini.notify", version = "*", opts = {} },
+	{ "echasnovski/mini.trailspace", version = "*", opts = {} },
 }

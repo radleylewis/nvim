@@ -35,6 +35,7 @@ local lsp_fmt_group = vim.api.nvim_create_augroup("FormatOnSaveGroup", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
 	group = lsp_fmt_group,
 	callback = function()
+		require("mini.trailspace").trim()
 		local efm = vim.lsp.get_clients({ name = "efm" })
 		if vim.tbl_isempty(efm) then
 			return
@@ -48,4 +49,20 @@ local lsp_on_attach_group = vim.api.nvim_create_augroup("LspMappings", {})
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = lsp_on_attach_group,
 	callback = on_attach,
+})
+
+-- custom options for text/markdown files
+local markdown_options = vim.api.nvim_create_augroup("MardownOptions", {})
+vim.api.nvim_create_autocmd("FileType", {
+	group = markdown_options,
+	pattern = { "markdown", "text", "gitcommit" },
+	callback = function()
+		vim.opt_local.wrap = true
+		vim.opt_local.linebreak = true
+		vim.opt_local.relativenumber = false
+		vim.opt_local.number = false
+		vim.opt_local.cursorline = false
+		vim.opt_local.colorcolumn = ""
+		vim.opt_local.signcolumn = "no"
+	end,
 })

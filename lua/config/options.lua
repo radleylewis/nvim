@@ -42,7 +42,6 @@ vim.opt.pumblend = 10 -- Popup menu transparency
 vim.opt.winblend = 0 -- Floating window transparency
 vim.opt.conceallevel = 0 -- Don't hide markup
 vim.opt.concealcursor = "" -- Show markup even on cursor line
-vim.opt.lazyredraw = false -- redraw while executing macros (butter UX)
 vim.opt.redrawtime = 10000 -- Timeout for syntax highlighting redraw
 vim.opt.maxmempattern = 20000 -- Max memory for pattern matching
 vim.opt.synmaxcol = 300 -- Syntax highlighting column limit

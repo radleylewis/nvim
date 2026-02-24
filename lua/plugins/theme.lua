@@ -6,29 +6,26 @@
 -- ================================================================================================
 
 return {
-	-- "savq/melange-nvim",
-	-- lazy = false,
-	-- priority = 1000,
-	-- config = function()
-	-- 	vim.cmd("colorscheme melange")
-	-- end,
 	{
 		"xiyaowong/nvim-transparent",
 		lazy = false,
 		priority = 999,
+		opts = {
+			extra_groups = {
+				"NvimTreeNormal",
+			},
+		},
 	},
-
 	{
 		"EdenEast/nightfox.nvim",
 		lazy = false,
 		priority = 999,
 		config = function()
-			-- load duskfox palette
 			local palette = require("nightfox.palette").load("duskfox")
 
 			require("nightfox").setup({
 				options = {
-					transparent = true,
+					transparent = false,
 				},
 				groups = {
 					duskfox = {
@@ -36,7 +33,6 @@ return {
 					},
 				},
 			})
-
 			vim.cmd("colorscheme duskfox")
 		end,
 	},
